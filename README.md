@@ -1,1 +1,0 @@
-# ameykaran.github.io
