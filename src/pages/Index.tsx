@@ -29,10 +29,16 @@ import { achievements } from "@/data/achievements";
 import { publications } from "@/data/publications";
 import { SkillCategory } from "@/types";
 import { openEmailClient } from "@/lib/utils";
+import { useEffect } from "react";
 
 const Index = () => {
+  useEffect(() => {
+    document.title = "Portfolio | Amey Karan";
+  }, []);
+
   const projects = projectsData.slice(0, 3);
   const experiences = experiencesData.slice(0, 3);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900">
       {/* Header/Hero Section */}

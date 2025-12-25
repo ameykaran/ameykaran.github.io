@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ProjectCard from "@/components/ProjectCard";
@@ -6,6 +6,10 @@ import { Link } from "react-router-dom";
 import { projects } from "@/data/projects";
 
 const Projects = () => {
+  useEffect(() => {
+    document.title = "Projects | Amey Karan";
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900">
       <div className="max-w-7xl mx-auto px-6 py-20">

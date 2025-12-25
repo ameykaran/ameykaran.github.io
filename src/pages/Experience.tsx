@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ExperienceCard from "@/components/ExperienceCard";
@@ -6,6 +6,10 @@ import { Link } from "react-router-dom";
 import { experiences } from "@/data/experience";
 
 const Experience = () => {
+  useEffect(() => {
+    document.title = "Experience | Amey Karan";
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900">
       <div className="max-w-4xl mx-auto px-6 py-20">
