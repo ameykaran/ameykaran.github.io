@@ -1,24 +1,41 @@
 export const publications = [
   {
     title:
-      "Machine Learning Approaches for Web Application Performance Optimization",
-    authors: ["Your Name", "Dr. Jane Smith", "Dr. John Doe"],
-    venue: "International Conference on Web Engineering (ICWE 2024)",
-    year: "2024",
+      "Engineering LLM Powered Multi-Agent Framework for Autonomous CloudOps",
+    authors: [
+      "Kannan Parthasarathy",
+      "Karthik Vaidhyanathan",
+      "Rudra Dhar",
+      "Venkat Krishnamachari",
+      "Adyansh Kakran",
+      "Sreemaee Akshathala",
+      "Shrikara Arun",
+      "Amey Karan",
+      "Basil Muhammed",
+      "Sumant Dubey",
+      "Mohan Veerubhotla",
+    ],
+    venue: "International Conference on AI Engineering (CAIN)",
+    year: "2025",
     abstract:
-      "This paper presents novel machine learning techniques for optimizing web application performance, achieving up to 40% improvement in load times through intelligent resource allocation and predictive caching mechanisms.",
-    url: "https://example.com/paper1",
-    doi: "10.1000/example.doi.1",
+      "Presented a novel multi-agent framework leveraging Large Language Models and tool access, with specialised agents for CloudOps tasks and autonomous AWS account optimisation.",
+    url: "https://doi.ieeecomputersociety.org/10.1109/CAIN66642.2025.00031",
+    doi: "10.1109/CAIN66642.2025.00031",
   },
   {
-    title:
-      "A Comparative Study of Modern JavaScript Frameworks for Educational Applications",
-    authors: ["Your Name", "Dr. Alice Johnson"],
-    venue: "ACM Transactions on Computing Education",
-    year: "2023",
+    title: "DRAFT-ing Architectural Design Decisions using LLMs",
+    authors: [
+      "Rudra Dhar",
+      "Karthik Vaidhyanathan",
+      "Adyansh Kakran",
+      "Amey Karan",
+      "Vasudeva Varma",
+    ],
+    venue: "Work in Progress",
+    year: "2025",
     abstract:
-      "We conducted a comprehensive evaluation of React, Vue.js, and Angular in the context of educational web applications, providing guidelines for framework selection based on project requirements.",
-    url: "https://example.com/paper2",
-    doi: "10.1000/example.doi.2",
+      "Exploring a novel mix of few-shot learning, RAG, and fine-tuning to enhance domain-specific generation of architectural design decisions.",
+    url: "https://doi.org/10.48550/arXiv.2504.08207",
+    doi: "10.48550/arXiv.2504.08207",
   },
 ];

@@ -1,29 +1,50 @@
 export const experiences = [
   {
-    title: "Frontend Developer Intern",
-    company: "Tech Solutions Inc.",
-    companyLogo: "https://gdm-catalog-fmapi-prod.imgix.net/ProductLogo/ecc24533-b9ea-4be3-994e-9aafd912fd10.jpeg",
-    duration: "Jun 2024 - Aug 2024",
-    location: "Remote",
+    title: "Research Assistant",
+    company: "MontyCloud (with SERC)",
+    duration: "May 2024 - Present",
+    location: "Hyderabad, India",
     description:
-      "Developed responsive web applications using React and TypeScript. Collaborated with senior developers to implement new features and optimize performance.",
+      "Research Assistant working on automating CloudOps tasks using multi-agent systems and LLMs.",
     achievements: [
-      "Improved page load speed by 40%",
-      "Implemented 5 new UI components",
-      "Participated in code reviews and agile development",
+      "Developed MOYA - a novel multi-agent framework available as open-source package",
+      "Published paper at CAIN 2025 on CloudOps automation",
     ],
   },
   {
-    title: "Web Development Freelancer",
-    company: "Self-Employed",
-    duration: "Jan 2024 - Present",
-    location: "Remote",
+    title: "Undergraduate Researcher",
+    company: "Software Engineering Research Center",
+    duration: "May 2024 - Present",
+    location: "IIIT Hyderabad",
     description:
-      "Created custom websites for small businesses and startups. Managed full project lifecycle from requirements gathering to deployment.",
+      "Researching in the intersection of Generative AI and Software Architecture, exploring extraction of design decisions from source code using Large Language Models.",
     achievements: [
-      "Delivered 8+ successful projects",
-      "Maintained 100% client satisfaction rate",
-      "Generated $5000+ in revenue",
+      "Conducted experiments on multiple open-source projects to evaluate LLMs for design decision extraction",
+    ],
+  },
+  {
+    title: "Teaching Assistant",
+    company: "IIIT Hyderabad",
+    duration: "Jan 2025 - May 2025",
+    location: "Hyderabad, India",
+    description:
+      "Assisted in conducting the Introduction to Software Systems course during Monsoon '25 by supporting tutorials and labs for hands-on learning.",
+    achievements: [
+      "Supported tutorials and labs for hands-on learning",
+      "Created and evaluated course assignments",
+    ],
+  },
+  {
+    title: "Web Team Head",
+    company: "Student Alumni Connect Cell",
+    duration: "Nov 2023 - Dec 2024",
+    location: "IIIT Hyderabad",
+    description:
+      "Led the development of the Yearbook portal to streamline the collection of data from graduating batch of 300+ students.",
+    achievements: [
+      "Coordinated with multiple teams for seamless feature integration",
+      "Designed entire backend to handle different APIs and services",
+      "Ensured user-friendly interface for 300+ students",
     ],
   },
 ];

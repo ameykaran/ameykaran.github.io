@@ -1,7 +1,8 @@
 import React from 'react';
-import { Github, ExternalLink } from 'lucide-react';
-import { Card } from '@/components/ui/card';
+import { ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 interface Project {
   title: string;
@@ -59,7 +60,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               asChild
             >
               <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                <Github className="w-4 h-4 mr-1" />
+                <FontAwesomeIcon icon={faGithub} className="w-4 h-4 mr-1" />
                 Code
               </a>
             </Button>

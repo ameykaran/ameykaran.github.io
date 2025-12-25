@@ -1,10 +1,14 @@
-import { Github, Linkedin, Instagram, Mail, Download, ExternalLink, Calendar, MapPin, Code, BookOpen } from 'lucide-react';
+import { Download, ExternalLink, Calendar, MapPin, Code, BookOpen } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import ProjectCard from "@/components/ProjectCard";
 import SkillBadge from "@/components/SkillBadge";
 import ExperienceCard from "@/components/ExperienceCard";
 import AchievementCard from "@/components/AchievementCard";
-import PublicationCard from '@/components/PublicationCard';
+import PublicationCard from '@/components/PublicationCard'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faInstagram, faSquareLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 import { about as aboutData, education} from "@/data/about";
 import { projects as projectsData } from "@/data/projects";
@@ -43,7 +47,7 @@ const Index = () => {
             <div className="flex flex-wrap gap-4 justify-center">
               <a href={`mailto:${aboutData.email}`} target="_blank" rel="noopener noreferrer">
                 <Button className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-blue-500/25 transition-all duration-300">
-                  <Mail className="w-4 h-4 mr-2" />
+                  <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4 mr-2" />
                   Contact Me
                 </Button>
               </a>
@@ -184,22 +188,22 @@ const Index = () => {
               <div className="flex justify-center gap-4">
                 <a href={`mailto:${aboutData.email}`} target="_blank" rel="noopener noreferrer">
                   <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                    <Mail className="w-4 h-4 mr-2" />Email
+                    <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4 mr-2" />Email
                   </Button>
                 </a>
                 <a href={aboutData.github} target="_blank" rel="noopener noreferrer">
                   <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                    <Github className="w-4 h-4 mr-2" />GitHub
+                    <FontAwesomeIcon icon={faGithub} className="w-4 h-4 mr-2" />GitHub
                   </Button>
                 </a>
                 <a href={aboutData.linkedin} target="_blank" rel="noopener noreferrer">
                   <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                    <Linkedin className="w-4 h-4 mr-2" />LinkedIn
+                    <FontAwesomeIcon icon={faSquareLinkedin} className="w-4 h-4 mr-2" />LinkedIn
                   </Button>
                 </a>
                 <a href={aboutData.instagram} target="_blank" rel="noopener noreferrer">
                   <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                    <Instagram className="w-4 h-4 mr-2" />Instagram
+                    <FontAwesomeIcon icon={faInstagram} className="w-4 h-4 mr-2" />Instagram
                   </Button>
                 </a>
               </div>
