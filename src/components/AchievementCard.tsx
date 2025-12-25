@@ -1,12 +1,6 @@
 import React from "react";
 import { Award, Calendar, Trophy, GraduationCap, FileText } from "lucide-react";
-
-interface Achievement {
-  title: string;
-  date: string;
-  description: string;
-  category: "Competition" | "Certification" | "Academic" | "Award";
-}
+import { Achievement } from "@/types";
 
 interface AchievementCardProps {
   achievement: Achievement;

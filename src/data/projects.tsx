@@ -1,4 +1,6 @@
-export const projects = [
+import { Project } from "@/types";
+
+export const projects: Project[] = [
   {
     title: "LearnAI - Adaptive Agentic AI Assistant",
     description:
@@ -13,7 +15,7 @@ export const projects = [
     description:
       "Pretrained a 150M-parameter multilingual model from scratch on 3B tokens (English, Hindi, Mizo) with curriculum training, fine-tuned for reasoning tasks.",
     technologies: ["Transformers", "Python", "PyTorch", "NLP"],
-    githubUrl: "https://github.com/ameykaran/DilLeiX",
+    githubUrl: "https://github.com/ameykaran/dilleix",
     imageUrl:
       "https://media.licdn.com/dms/image/v2/D4E12AQEKGQD8xqPVTA/article-cover_image-shrink_600_2000/B4EZVLy_bJHgAU-/0/1740733414301?e=2147483647&v=beta&t=UopLcUs3YLOI2CcGxz5u9nL4zPsz2npHZ1TZZc4Tr5Y",
   },
@@ -63,6 +65,7 @@ export const projects = [
       "Baby growth tracking solution built from user research insights, with Figma wireframes and ViteJS prototype.",
     technologies: ["ViteJS", "User Research", "Figma", "JavaScript"],
     githubUrl: "https://github.com/ameykaran/tiny-tots",
+    demoUrl: "https://tiny-tots-tracker-app.vercel.app/",
     imageUrl:
       "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=500&h=300&fit=crop",
   },

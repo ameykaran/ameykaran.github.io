@@ -1,15 +1,6 @@
 import React from "react";
 import { Briefcase, Calendar, MapPin, CheckCircle } from "lucide-react";
-
-interface Experience {
-  title: string;
-  company: string;
-  companyLogo?: string;
-  duration: string;
-  location: string;
-  description: string;
-  achievements: string[];
-}
+import { Experience } from "@/types";
 
 interface ExperienceCardProps {
   experience: Experience;

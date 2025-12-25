@@ -1,4 +1,6 @@
-export const publications = [
+import { Publication } from "@/types";
+
+export const publications: Publication[] = [
   {
     title:
       "Engineering LLM Powered Multi-Agent Framework for Autonomous CloudOps",

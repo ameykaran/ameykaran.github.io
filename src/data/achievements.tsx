@@ -1,4 +1,6 @@
-export const achievements = [
+import { Achievement } from "@/types";
+
+export const achievements: Achievement[] = [
   {
     title: "Dean's List",
     date: "2022-2025",

@@ -2,7 +2,7 @@ export const about = {
   name: "Amey Karan",
   tagline: "AI & Software Engineering Researcher",
   bio: "Undergraduate researcher in Software Engineering Research Centre, exploring the intersection of Generative AI and Software Architecture.",
-  email: "ameykaran2005 [at] gmail [dot] com",
+  email: "ameykaran2005[at]gmail[dot]com",
   linkedin: "https://www.linkedin.com/in/ameykaran",
   github: "https://github.com/ameykaran",
   instagram: "https://www.instagram.com/amey_karan/",

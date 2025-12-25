@@ -1,10 +1,5 @@
 import React from "react";
-
-interface Skill {
-  name: string;
-  level: "Beginner" | "Intermediate" | "Advanced";
-  category: string;
-}
+import { Skill } from "@/types";
 
 interface SkillBadgeProps {
   skill: Skill;

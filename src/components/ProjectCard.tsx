@@ -3,15 +3,7 @@ import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-
-interface Project {
-  title: string;
-  description: string;
-  technologies: string[];
-  githubUrl?: string;
-  demoUrl?: string;
-  imageUrl?: string;
-}
+import { Project } from "@/types";
 
 interface ProjectCardProps {
   project: Project;

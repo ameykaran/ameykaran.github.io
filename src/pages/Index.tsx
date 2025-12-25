@@ -23,10 +23,12 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
 import { about as aboutData, education } from "@/data/about";
 import { projects as projectsData } from "@/data/projects";
-import { skills, skillCategories } from "@/data/skills";
+import { skills } from "@/data/skills";
 import { experiences as experiencesData } from "@/data/experience";
 import { achievements } from "@/data/achievements";
 import { publications } from "@/data/publications";
+import { SkillCategory } from "@/types";
+import { openEmailClient } from "@/lib/utils";
 
 const Index = () => {
   const projects = projectsData.slice(0, 3);
@@ -52,16 +54,13 @@ const Index = () => {
               {aboutData.bio}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a
-                href={`mailto:${aboutData.email}`}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Button
+                onClick={() => openEmailClient(aboutData.email)}
+                className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
               >
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-blue-500/25 transition-all duration-300">
-                  <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4 mr-2" />
-                  Contact Me
-                </Button>
-              </a>
+                <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4 mr-2" />
+                Contact Me
+              </Button>
               <a
                 href={aboutData.resumePath}
                 target="_blank"
@@ -87,8 +86,8 @@ const Index = () => {
             Education
           </h2>
           <div className="space-y-6">
-            {education.map((education) => (
-              <div className="glass-card p-6">
+            {education.map((education, index) => (
+              <div key={index} className="glass-card p-6">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-slate-600 rounded-lg flex items-center justify-center flex-shrink-0">
                     <BookOpen className="w-6 h-6 text-white" />
@@ -121,17 +120,16 @@ const Index = () => {
             Skills & Technologies
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {skillCategories.map((category) => (
+            {Object.values(SkillCategory).map((category) => (
               <div key={category} className="glass-card p-6">
-                <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                  <Code className="w-5 h-5 text-blue-400" />
+                <h3 className="text-xl font-semibold text-white mb-4">
                   {category}
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {skills
                     .filter((skill) => skill.category === category)
-                    .map((skill, index) => (
-                      <SkillBadge key={index} skill={skill} />
+                    .map((skill) => (
+                      <SkillBadge key={skill.name} skill={skill} />
                     ))}
                 </div>
               </div>
@@ -155,7 +153,7 @@ const Index = () => {
               variant="outline"
               className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"
             >
-              <a href="/projects">
+              <a href="/#/projects">
                 View All Projects
                 <ExternalLink className="w-4 h-4 ml-2" />
               </a>
@@ -179,7 +177,7 @@ const Index = () => {
               variant="outline"
               className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"
             >
-              <a href="/experience">
+              <a href="/#/experience">
                 View All Experiences
                 <ExternalLink className="w-4 h-4 ml-2" />
               </a>
@@ -223,16 +221,13 @@ const Index = () => {
               reach out!
             </p>
             <div className="flex justify-center gap-4">
-              <a
-                href={`mailto:${aboutData.email}`}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Button
+                onClick={() => openEmailClient(aboutData.email)}
+                className="bg-blue-600 hover:bg-blue-700 text-white"
               >
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                  <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4 mr-2" />
-                  Email
-                </Button>
-              </a>
+                <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4 mr-2" />
+                Email
+              </Button>
               <a
                 href={aboutData.github}
                 target="_blank"

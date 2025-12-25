@@ -1,16 +1,7 @@
 import React from "react";
 import { ExternalLink, Calendar, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-interface Publication {
-  title: string;
-  authors: string[];
-  venue: string;
-  year: string;
-  abstract: string;
-  url?: string;
-  doi?: string;
-}
+import { Publication } from "@/types";
 
 interface PublicationCardProps {
   publication: Publication;
