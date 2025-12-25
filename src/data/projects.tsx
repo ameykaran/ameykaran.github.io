@@ -16,6 +16,7 @@ export const projects: Project[] = [
       "Pretrained a 150M-parameter multilingual model from scratch on 3B tokens (English, Hindi, Mizo) with curriculum training, fine-tuned for reasoning tasks.",
     technologies: ["Transformers", "Python", "PyTorch", "NLP"],
     githubUrl: "https://github.com/ameykaran/dilleix",
+    demoUrl: "https://huggingface.co/ameykaran/DilLeiX-it",
     imageUrl:
       "https://media.licdn.com/dms/image/v2/D4E12AQEKGQD8xqPVTA/article-cover_image-shrink_600_2000/B4EZVLy_bJHgAU-/0/1740733414301?e=2147483647&v=beta&t=UopLcUs3YLOI2CcGxz5u9nL4zPsz2npHZ1TZZc4Tr5Y",
   },
