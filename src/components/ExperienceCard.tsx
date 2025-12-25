@@ -55,10 +55,15 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
           </p>
 
           <div className="space-y-2">
-            <h4 className="text-sm font-semibold text-white">Key Achievements:</h4>
+            <h4 className="text-sm font-semibold text-white">
+              Key Achievements:
+            </h4>
             <ul className="space-y-1">
               {experience.achievements.map((achievement, index) => (
-                <li key={index} className="flex items-start gap-2 text-sm text-gray-300">
+                <li
+                  key={index}
+                  className="flex items-start gap-2 text-sm text-gray-300"
+                >
                   <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
                   {achievement}
                 </li>

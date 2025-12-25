@@ -12,14 +12,20 @@ const Projects = () => {
         {/* Header */}
         <div className="mb-12">
           <Link to="/">
-              <Button variant="outline" className="mb-6 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white">
+            <Button
+              variant="outline"
+              className="mb-6 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"
+            >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Home
             </Button>
           </Link>
-          <h1 className="text-4xl font-bold text-white mb-4 text-center">My Projects</h1>
+          <h1 className="text-4xl font-bold text-white mb-4 text-center">
+            My Projects
+          </h1>
           <p className="text-gray-300 text-center max-w-2xl mx-auto">
-            A collection of projects I've worked on, showcasing my skills in web development, machine learning, and software engineering.
+            A collection of projects I've worked on, showcasing my skills in web
+            development, machine learning, and software engineering.
           </p>
         </div>
 
