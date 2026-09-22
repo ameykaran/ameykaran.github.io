@@ -3,7 +3,6 @@ export const about = {
   tagline: "AI & Software Engineering Researcher",
   bio: "BTech + MS (by Research) student at IIIT Hyderabad, building multi-agent LLM systems and researching the intersection of Generative AI and Software Architecture.",
   email: "ameykaran2005[at]gmail[dot]com",
-  phone: "+91 79047 35718",
   linkedin: "https://www.linkedin.com/in/ameykaran",
   github: "https://github.com/ameykaran",
   instagram: "https://www.instagram.com/amey_karan/",
@@ -32,17 +31,4 @@ export const education = [
     gradDate: "Apr 2018 - Mar 2020",
     detail: "Score - 96.4%",
   },
-];
-
-export const coursework = [
-  "Distributed Systems",
-  "Software Engineering",
-  "Computer Vision",
-  "Language Models and Agents",
-  "Statistical Methods in AI",
-  "Design and Analysis of Software Systems",
-  "Operating Systems & Networks",
-  "Data Structures & Algorithms",
-  "Probability and Statistics",
-  "Linear Algebra",
 ];

@@ -2,31 +2,38 @@ import { Achievement } from "@/types";
 
 export const achievements: Achievement[] = [
   {
+    title: "Winner - Megathon 2025",
+    date: "October 2025",
+    description:
+      "First in the SaralAI problem statement, building a platform that could create shorts, posters, ppts, etc. from research papers.",
+    category: "Competition",
+  },
+  {
     title: "Dean's List",
     date: "2022 - 2025",
     description:
       "Ranked in the top 10-20% of the batch in the second, fourth and fifth semesters at IIIT Hyderabad.",
-    category: "Academic" as const,
+    category: "Academic",
   },
   {
     title: "Research Award",
     date: "2025",
     description:
       "Recognised for publishing at an A-tier conference during undergraduate studies.",
-    category: "Award" as const,
+    category: "Award",
   },
   {
     title: "NTSE Scholar",
     date: "2020",
     description:
       "Selected among 1000 students across India for the National Talent Search Examination fellowship.",
-    category: "Academic" as const,
+    category: "Academic",
   },
   {
     title: "SQL Injection Workshop",
     date: "2023",
     description:
       "Conducted a technical session on SQL injection as part of the Hacking Club at IIIT Hyderabad.",
-    category: "Certification" as const,
+    category: "Certification",
   },
 ];

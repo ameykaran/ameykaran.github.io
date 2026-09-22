@@ -5,7 +5,7 @@ export const experiences: Experience[] = [
     title: "SDE Intern",
     company: "UiPath",
     duration: "May 2026 - Jul 2026",
-    location: "Remote",
+    location: "Bengaluru, India",
     description:
       "Worked on a platform that generates dynamic web applications from natural language prompts, featuring real-time previews and one-click deployment.",
     achievements: [

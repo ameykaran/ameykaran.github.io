@@ -2,6 +2,13 @@ import { Volunteering } from "@/types";
 
 export const volunteering: Volunteering[] = [
   {
+    role: "Student Volunteer",
+    organisation: "SERI 2026",
+    duration: "Jul 2026",
+    description:
+      "Helped organise the Software Engineering Research in India '26, managing the logistics of the event.",
+  },
+  {
     role: "Organiser-cum-Judge",
     organisation: "HackIIIT 2025",
     duration: "Feb 2025",

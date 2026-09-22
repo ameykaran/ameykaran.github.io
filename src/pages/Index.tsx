@@ -1,4 +1,10 @@
-import { ExternalLink, Calendar, MapPin, BookOpen, Sparkles } from "lucide-react";
+import {
+  ExternalLink,
+  Calendar,
+  MapPin,
+  BookOpen,
+  Sparkles,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ProjectCard from "@/components/ProjectCard";
 import SkillBadge from "@/components/SkillBadge";
@@ -15,7 +21,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
-import { about as aboutData, education, coursework } from "@/data/about";
+import { about as aboutData, education } from "@/data/about";
 import { projects as projectsData } from "@/data/projects";
 import { skills } from "@/data/skills";
 import { experiences as experiencesData } from "@/data/experience";
@@ -43,12 +49,14 @@ const Index = () => {
         <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-5">
           <div className="glass-card sm:col-span-2 p-8 sm:p-10 flex flex-col justify-center animate-fade-up">
             <span className="section-eyebrow">
-              <Sparkles className="w-3.5 h-3.5" /> hey, I'm
+              <Sparkles className="w-3.5 h-3.5" /> Hey, I'm
             </span>
             <h1 className="font-display text-4xl sm:text-5xl font-extrabold text-white mb-3 tracking-tight">
               {aboutData.name}
             </h1>
-            <p className="text-lg text-blue font-medium mb-4">{aboutData.tagline}</p>
+            <p className="text-lg text-blue font-medium mb-4">
+              {aboutData.tagline}
+            </p>
             <p className="text-gray-300/90 max-w-xl leading-relaxed mb-7">
               {aboutData.bio}
             </p>
@@ -60,7 +68,11 @@ const Index = () => {
                 <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4 mr-2" />
                 Contact Me
               </Button>
-              <a href={aboutData.resumePath} target="_blank" rel="noopener noreferrer">
+              <a
+                href={aboutData.resumePath}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button
                   variant="outline"
                   className="rounded-full border-white/20 bg-transparent text-white hover:bg-white/10 hover:scale-105 transition-all duration-300"
@@ -87,7 +99,10 @@ const Index = () => {
           <h2 className="section-title">Education</h2>
           <div className="space-y-5">
             {education.map((edu, index) => (
-              <div key={index} className="glass-card p-6 hover:-translate-y-0.5 transition-all duration-300">
+              <div
+                key={index}
+                className="glass-card p-6 hover:-translate-y-0.5 transition-all duration-300"
+              >
                 <div className="flex items-start gap-4">
                   <div className="w-11 h-11 rounded-2xl bg-violet/15 border border-violet/30 text-violet flex items-center justify-center flex-shrink-0">
                     <BookOpen className="w-5 h-5" />
@@ -101,7 +116,9 @@ const Index = () => {
                         {edu.detail}
                       </span>
                     </div>
-                    <p className="text-gray-300/90 mb-2 text-sm">{edu.school}</p>
+                    <p className="text-gray-300/90 mb-2 text-sm">
+                      {edu.school}
+                    </p>
                     <div className="flex flex-wrap gap-4 text-gray-400 text-xs font-mono">
                       <div className="flex items-center gap-1">
                         <Calendar className="w-3.5 h-3.5" />
@@ -138,18 +155,21 @@ const Index = () => {
               </div>
             ))}
           </div>
-          <div className="glass-card p-6 mt-5">
+          {/* <div className="glass-card p-6 mt-5">
             <h3 className="font-display text-base font-semibold text-white mb-4">
               Relevant Coursework
             </h3>
             <div className="flex flex-wrap gap-2">
               {coursework.map((course) => (
-                <span key={course} className="chip bg-white/5 text-gray-300 border-white/10">
+                <span
+                  key={course}
+                  className="chip bg-white/5 text-gray-300 border-white/10"
+                >
                   {course}
                 </span>
               ))}
             </div>
-          </div>
+          </div> */}
         </section>
 
         {/* Featured Projects */}
@@ -157,7 +177,11 @@ const Index = () => {
           <h2 className="section-title">Featured Projects</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {projects.map((project, index) => (
-              <ProjectCard key={index} project={project} featured={index === 0} />
+              <ProjectCard
+                key={index}
+                project={project}
+                featured={index === 0}
+              />
             ))}
           </div>
           <div className="text-center mt-8">
@@ -215,7 +239,16 @@ const Index = () => {
           <h2 className="section-title">Achievements</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {achievements.map((achievement, index) => (
-              <AchievementCard key={index} achievement={achievement} />
+              <div
+                key={index}
+                className={
+                  achievements.length % 2 === 1 && index === 0
+                    ? "md:col-span-2"
+                    : ""
+                }
+              >
+                <AchievementCard achievement={achievement} />
+              </div>
             ))}
           </div>
         </section>
@@ -225,7 +258,16 @@ const Index = () => {
           <h2 className="section-title">Volunteering</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {volunteering.map((role, index) => (
-              <VolunteeringCard key={index} volunteering={role} />
+              <div
+                key={index}
+                className={
+                  volunteering.length % 3 === 1 && index === 0
+                    ? "md:col-span-3"
+                    : ""
+                }
+              >
+                <VolunteeringCard key={index} volunteering={role} />
+              </div>
             ))}
           </div>
         </section>
@@ -247,21 +289,39 @@ const Index = () => {
                 <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4 mr-2" />
                 Email
               </Button>
-              <a href={aboutData.github} target="_blank" rel="noopener noreferrer">
+              <a
+                href={aboutData.github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button className="rounded-full bg-white/10 text-white hover:bg-white/20 hover:scale-105 transition-all duration-300">
                   <FontAwesomeIcon icon={faGithub} className="w-4 h-4 mr-2" />
                   GitHub
                 </Button>
               </a>
-              <a href={aboutData.linkedin} target="_blank" rel="noopener noreferrer">
+              <a
+                href={aboutData.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button className="rounded-full bg-white/10 text-white hover:bg-white/20 hover:scale-105 transition-all duration-300">
-                  <FontAwesomeIcon icon={faSquareLinkedin} className="w-4 h-4 mr-2" />
+                  <FontAwesomeIcon
+                    icon={faSquareLinkedin}
+                    className="w-4 h-4 mr-2"
+                  />
                   LinkedIn
                 </Button>
               </a>
-              <a href={aboutData.instagram} target="_blank" rel="noopener noreferrer">
+              <a
+                href={aboutData.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button className="rounded-full bg-white/10 text-white hover:bg-white/20 hover:scale-105 transition-all duration-300">
-                  <FontAwesomeIcon icon={faInstagram} className="w-4 h-4 mr-2" />
+                  <FontAwesomeIcon
+                    icon={faInstagram}
+                    className="w-4 h-4 mr-2"
+                  />
                   Instagram
                 </Button>
               </a>

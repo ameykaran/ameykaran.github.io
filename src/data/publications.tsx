@@ -25,14 +25,20 @@ export const publications: Publication[] = [
     doi: "10.1109/CAIN66642.2025.00031",
   },
   {
-    title: "Can LLMs Extract Architectural Design Decisions from Source Code Commits?",
-    // TODO: confirm full author list with Amey before publishing
-    authors: ["Amey Karan"],
-    venue: "IdeaArch, European Conference on Software Architecture (ECSA)",
+    title:
+      "Can LLMs Extract Architectural Design Decisions from Source Code Commits?",
+    authors: [
+      "Amey Karan",
+      "Rudra Dhar",
+      "Mohamed Soliman",
+      "Karthik Vaidhyanathan",
+    ],
+    venue: "IdeaArch workshop, European Conference on Software Architecture (ECSA)",
     year: "2026",
     abstract:
-      "Exploring whether LLMs can extract high-level architectural intent from raw commit data.",
+      "Exploring whether LLMs can extract high-level architectural design decisions from raw commit data.",
     url: "https://arxiv.org/abs/2609.03721",
+    doi: "10.48550/arXiv.2609.03721",
   },
   {
     title: "DRAFT-ing Architectural Design Decisions using LLMs",
@@ -46,7 +52,7 @@ export const publications: Publication[] = [
     venue: "Work in Progress",
     year: "2025",
     abstract:
-      "Exploring a novel mix of few-shot learning, RAG, and fine-tuning to enhance domain-specific generation of architectural design decisions.",
+      "Exploring a novel mix of fewshot learning, RAG, and fine-tuning to enhance domain-specific generation of architectural design records.",
     url: "https://arxiv.org/abs/2504.08207",
     doi: "10.48550/arXiv.2504.08207",
   },

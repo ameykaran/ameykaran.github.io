@@ -163,7 +163,7 @@
   }
 
   .section-eyebrow {
-    @apply font-mono text-xs tracking-widest uppercase text-blue/80 mb-2 inline-flex items-center gap-2;
+    @apply font-mono text-xs tracking-widest text-blue/80 mb-2 inline-flex items-center gap-2;
   }
 
   .section-title {
