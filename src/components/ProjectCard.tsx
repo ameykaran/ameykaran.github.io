@@ -23,6 +23,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured = false }) 
           <img
             src={project.imageUrl}
             alt={project.title}
+            loading={featured ? "eager" : "lazy"}
+            decoding="async"
             className={cn(
               "w-full object-cover group-hover:scale-105 transition-transform duration-500",
               featured ? "h-64" : "h-40"

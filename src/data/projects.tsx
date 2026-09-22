@@ -7,8 +7,7 @@ export const projects: Project[] = [
       "Multi-agent AI system with five specialised agents and dynamic user profiling for personalised learning responses, along with a self-adaptive document ingestion pipeline with OCR and semantic chunking.",
     technologies: ["Strands", "RAG", "OCR", "FastAPI", "NextJS"],
     githubUrl: "https://github.com/ameykaran/learnai",
-    imageUrl:
-      "https://ams3.digitaloceanspaces.com/karabo-ai/static/assets/img/teaching_learning_ai_assistant.jpg",
+    imageUrl: "./projects/learnai.jpg",
   },
   {
     title: "DilLeiX - Multilingual SLM pretrained from scratch",
@@ -17,8 +16,7 @@ export const projects: Project[] = [
     technologies: ["Transformers", "Python", "PyTorch", "NLP"],
     githubUrl: "https://github.com/ameykaran/dilleix",
     demoUrl: "https://huggingface.co/ameykaran/DilLeiX-it",
-    imageUrl:
-      "https://media.licdn.com/dms/image/v2/D4E12AQEKGQD8xqPVTA/article-cover_image-shrink_600_2000/B4EZVLy_bJHgAU-/0/1740733414301?e=2147483647&v=beta&t=UopLcUs3YLOI2CcGxz5u9nL4zPsz2npHZ1TZZc4Tr5Y",
+    imageUrl: "./projects/dilleix.jpg",
   },
   {
     title: "Legends of Stonks - Stock Market Learning Platform",
@@ -33,8 +31,7 @@ export const projects: Project[] = [
       "FastAPI",
     ],
     githubUrl: "https://github.com/ameykaran/legends-of-stonks",
-    imageUrl:
-      "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&h=300&fit=crop",
+    imageUrl: "./projects/legends-of-stonks.jpg",
   },
   {
     title: "OCR using CRNNs",
@@ -42,8 +39,7 @@ export const projects: Project[] = [
       "Built and trained machine learning models for extracting text from images using CNN encoder and RNN as decoder for auto-regressive modelling, achieving an accuracy of 77.16%.",
     technologies: ["Python", "PyTorch", "CNN", "RNN", "OCR"],
     githubUrl: "https://github.com/ameykaran/ocr-crnn",
-    imageUrl:
-      "https://cdn.prod.website-files.com/61e7d259b7746e3f63f0b6be/62dff621ff6976b401611642_Sans%20titre%20(20).png",
+    imageUrl: "./projects/ocr-crnn.jpg",
   },
   {
     title: "Rudra's Subscription Service - Refactoring",
@@ -58,7 +54,7 @@ export const projects: Project[] = [
       "Sonarqube",
     ],
     githubUrl: "https://github.com/ameykaran/rudra-subscription",
-    imageUrl: "https://www.sismics.com/reader/img/features/central.png",
+    imageUrl: "./projects/rudra-subscription.jpg",
   },
   {
     title: "Tiny Tots - Baby Growth Tracker",
@@ -67,8 +63,7 @@ export const projects: Project[] = [
     technologies: ["ViteJS", "User Research", "Figma", "JavaScript"],
     githubUrl: "https://github.com/ameykaran/tiny-tots",
     demoUrl: "https://tiny-tots-tracker-app.vercel.app/",
-    imageUrl:
-      "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=500&h=300&fit=crop",
+    imageUrl: "./projects/tiny-tots.jpg",
   },
   {
     title: "Recruitment Portal for IIIT Hyderabad",
@@ -76,8 +71,7 @@ export const projects: Project[] = [
       "End-to-end online recruitment portal with job posting, application submission, interview scheduling, and CAS authentication for staff and faculty hiring.",
     technologies: ["ReactJS", "MongoDB", "NodeJS", "Express"],
     githubUrl: "https://github.com/ameykaran/recruitment-portal",
-    imageUrl:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop",
+    imageUrl: "./projects/recruitment-portal.jpg",
   },
   {
     title: "UNO Cards Detection using Pattern Matching",
@@ -85,8 +79,7 @@ export const projects: Project[] = [
       "A system for automatic detection and recognition of UNO cards using pattern matching and image processing techniques.",
     technologies: ["Numpy", "Matplotlib", "OpenCV", "Image Processing"],
     githubUrl: "https://github.com/ameykaran/dip-project/",
-    imageUrl:
-      "https://assetsio.gnwcdn.com/uno-hand_I1JrsbV.jpg?width=1200&height=900&fit=crop&quality=100&format=png&enable=upscale&auto=webp",
+    imageUrl: "./projects/uno-cards.jpg",
   },
   {
     title: "AKonsole",
@@ -102,8 +95,7 @@ export const projects: Project[] = [
       "Optimised matrix multiplication using GCC flags, SIMD vectorisation, OpenMP multi-threading, and CUDA for GPU acceleration, achieving 100x speedup.",
     technologies: ["C", "MakeFile", "SIMD", "CUDA", "OpenMP"],
     githubUrl: "https://github.com/ameykaran/matrix-optimization",
-    imageUrl:
-      "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=500&h=300&fit=crop",
+    imageUrl: "./projects/matrix-multiplication.jpg",
   },
 
   {
@@ -112,8 +104,7 @@ export const projects: Project[] = [
       "Implementing concepts of concurrency, threads, mutexes, condition variables and semaphores.",
     technologies: ["C", "Semaphores", "Locks"],
     githubUrl: "https://github.com/ameykaran/Concurrency",
-    imageUrl:
-      "https://seaworld.com/san-diego/-/media/migrated-media/seaworld-san-diego/images/dining/dreyers-ice-cream-parlor/1900x500-swc-dining-dreyers-ice-cream-parlor.jpg",
+    imageUrl: "./projects/icecream-parlor.jpg",
   },
   {
     title: "Improving xv6 - Part2",
@@ -127,8 +118,7 @@ export const projects: Project[] = [
       "Memory Pages",
     ],
     githubUrl: "https://github.com/ameykaran/xv6-part2",
-    imageUrl:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=500&h=300&fit=crop",
+    imageUrl: "./projects/xv6-part2.jpg",
   },
   {
     title: "IndCity - Wordle Game",
@@ -136,7 +126,6 @@ export const projects: Project[] = [
       "Wordle-like game for Indian audience where players guess city names based on hints. Published on Google Play Store.",
     technologies: ["Android Studio", "Java"],
     demoUrl: "https://apkgk.com/com.ameykaran.indcity",
-    imageUrl:
-      "https://play-lh.googleusercontent.com/Xj6aRDt0zUxVSXM1Ke1a_aNlwb4Noka6fFdkskbFxXk6RvHveBm2bPTpB4vED0KWOKM=w800-h500-rw",
+    imageUrl: "./projects/indcity.webp",
   },
 ];
