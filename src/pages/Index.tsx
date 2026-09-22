@@ -1,4 +1,11 @@
-import { Calendar, MapPin, BookOpen, Sparkles } from "lucide-react";
+import {
+  Calendar,
+  MapPin,
+  BookOpen,
+  Sparkles,
+  ChevronDown,
+  ChevronUp,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ProjectCard from "@/components/ProjectCard";
 import SkillBadge from "@/components/SkillBadge";
@@ -24,17 +31,27 @@ import { publications } from "@/data/publications";
 import { volunteering } from "@/data/volunteering";
 import { SkillCategory } from "@/types";
 import { openEmailClient } from "@/lib/utils";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const accentCycle = ["blue", "mint", "sun", "violet"] as const;
+
+const PROJECTS_PREVIEW_COUNT = 4;
+const EXPERIENCE_PREVIEW_COUNT = 3;
 
 const Index = () => {
   useEffect(() => {
     document.title = "Portfolio | Amey Karan";
   }, []);
 
-  const projects = projectsData;
-  const experiences = experiencesData;
+  const [showAllProjects, setShowAllProjects] = useState(false);
+  const [showAllExperience, setShowAllExperience] = useState(false);
+
+  const projects = showAllProjects
+    ? projectsData
+    : projectsData.slice(0, PROJECTS_PREVIEW_COUNT);
+  const experiences = showAllExperience
+    ? experiencesData
+    : experiencesData.slice(0, EXPERIENCE_PREVIEW_COUNT);
 
   return (
     <div className="min-h-screen pb-24">
@@ -89,7 +106,7 @@ const Index = () => {
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 space-y-20">
         {/* Education */}
-        <section id="education">
+        <section id="education" className="scroll-mt-24">
           <h2 className="section-title">Education</h2>
           <div className="space-y-5">
             {education.map((edu, index) => (
@@ -131,7 +148,7 @@ const Index = () => {
         </section>
 
         {/* Skills */}
-        <section id="skills">
+        <section id="skills" className="scroll-mt-24">
           <h2 className="section-title">Skills & Technologies</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {Object.values(SkillCategory).map((category) => (
@@ -167,22 +184,34 @@ const Index = () => {
         </section>
 
         {/* Projects */}
-        <section id="projects">
-          <h2 className="section-title">Projects</h2>
+        <section id="projects" className="scroll-mt-24">
+          <h2 className="section-title">Featured Projects</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {projects.map((project, index) => (
-              <ProjectCard
-                key={index}
-                project={project}
-                featured={index === 0}
-              />
+              <ProjectCard key={index} project={project} />
             ))}
           </div>
+          {projectsData.length > PROJECTS_PREVIEW_COUNT && (
+            <div className="text-center mt-8">
+              <Button
+                variant="outline"
+                onClick={() => setShowAllProjects((prev) => !prev)}
+                className="rounded-full border-white/20 bg-transparent text-white hover:bg-white/10"
+              >
+                {showAllProjects ? "Show Less" : "Show More Projects"}
+                {showAllProjects ? (
+                  <ChevronUp className="w-4 h-4 ml-2" />
+                ) : (
+                  <ChevronDown className="w-4 h-4 ml-2" />
+                )}
+              </Button>
+            </div>
+          )}
         </section>
 
         {/* Experience */}
-        <section id="experience">
-          <h2 className="section-title">Experience</h2>
+        <section id="experience" className="scroll-mt-24">
+          <h2 className="section-title">Recent Experience</h2>
           <div className="space-y-5">
             {experiences.map((experience, index) => (
               <ExperienceCard
@@ -192,10 +221,26 @@ const Index = () => {
               />
             ))}
           </div>
+          {experiencesData.length > EXPERIENCE_PREVIEW_COUNT && (
+            <div className="text-center mt-8">
+              <Button
+                variant="outline"
+                onClick={() => setShowAllExperience((prev) => !prev)}
+                className="rounded-full border-white/20 bg-transparent text-white hover:bg-white/10"
+              >
+                {showAllExperience ? "Show Less" : "Show More Experience"}
+                {showAllExperience ? (
+                  <ChevronUp className="w-4 h-4 ml-2" />
+                ) : (
+                  <ChevronDown className="w-4 h-4 ml-2" />
+                )}
+              </Button>
+            </div>
+          )}
         </section>
 
         {/* Publications */}
-        <section id="publications">
+        <section id="publications" className="scroll-mt-24">
           <h2 className="section-title">Research Publications</h2>
           <div className="space-y-5">
             {publications.map((publication, index) => (
@@ -205,7 +250,7 @@ const Index = () => {
         </section>
 
         {/* Achievements */}
-        <section id="achievements">
+        <section id="achievements" className="scroll-mt-24">
           <h2 className="section-title">Achievements</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {achievements.map((achievement, index) => (
@@ -224,7 +269,7 @@ const Index = () => {
         </section>
 
         {/* Volunteering */}
-        <section id="volunteering">
+        <section id="volunteering" className="scroll-mt-24">
           <h2 className="section-title">Volunteering</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {volunteering.map((role, index) => (
@@ -243,7 +288,7 @@ const Index = () => {
         </section>
 
         {/* Contact */}
-        <section id="contact" className="text-center">
+        <section id="contact" className="text-center scroll-mt-24">
           <h2 className="section-title">Let's Connect</h2>
           <div className="glass-card p-8 sm:p-10">
             <p className="text-gray-300/90 mb-6 max-w-2xl mx-auto">

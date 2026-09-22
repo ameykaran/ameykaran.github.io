@@ -2,11 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { HashRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import Projects from "./pages/Projects";
-import Experience from "./pages/Experience";
-import NotFound from "./pages/NotFound";
 import Navbar from "@/components/Navbar";
 import BackgroundBlobs from "@/components/BackgroundBlobs";
 
@@ -17,17 +13,9 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <HashRouter>
-        <BackgroundBlobs />
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/experience" element={<Experience />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </HashRouter>
+      <BackgroundBlobs />
+      <Navbar />
+      <Index />
     </TooltipProvider>
   </QueryClientProvider>
 );
