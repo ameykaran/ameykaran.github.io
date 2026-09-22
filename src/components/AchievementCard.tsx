@@ -6,67 +6,42 @@ interface AchievementCardProps {
   achievement: Achievement;
 }
 
-const AchievementCard: React.FC<AchievementCardProps> = ({ achievement }) => {
-  const getCategoryIcon = (category: string) => {
-    switch (category) {
-      case "Competition":
-        return <Trophy className="w-6 h-6 text-yellow-400" />;
-      case "Certification":
-        return <FileText className="w-6 h-6 text-blue-400" />;
-      case "Academic":
-        return <GraduationCap className="w-6 h-6 text-green-400" />;
-      default:
-        return <Award className="w-6 h-6 text-purple-400" />;
-    }
-  };
+const styleFor = (category: string) => {
+  switch (category) {
+    case "Competition":
+      return { icon: Trophy, classes: "bg-sun/15 text-sun border-sun/30" };
+    case "Certification":
+      return { icon: FileText, classes: "bg-mint/15 text-mint border-mint/30" };
+    case "Academic":
+      return { icon: GraduationCap, classes: "bg-violet/15 text-violet border-violet/30" };
+    default:
+      return { icon: Award, classes: "bg-coral/15 text-coral border-coral/30" };
+  }
+};
 
-  const getCategoryColor = (category: string) => {
-    switch (category) {
-      case "Competition":
-        return "bg-yellow-500/20 border-yellow-500/30";
-      case "Certification":
-        return "bg-blue-500/20 border-blue-500/30";
-      case "Academic":
-        return "bg-green-500/20 border-green-500/30";
-      default:
-        return "bg-purple-500/20 border-purple-500/30";
-    }
-  };
+const AchievementCard: React.FC<AchievementCardProps> = ({ achievement }) => {
+  const { icon: Icon, classes } = styleFor(achievement.category);
 
   return (
-    <div className="glass-card p-6 hover:scale-105 transition-all duration-300">
+    <div className="glass-card p-6 hover:-translate-y-1 hover:animate-wiggle transition-all duration-300">
       <div className="flex items-start gap-4">
-        <div
-          className={`w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 border ${getCategoryColor(
-            achievement.category
-          )}`}
-        >
-          {getCategoryIcon(achievement.category)}
+        <div className={`w-11 h-11 rounded-2xl flex items-center justify-center flex-shrink-0 border ${classes}`}>
+          <Icon className="w-5 h-5" />
         </div>
 
         <div className="flex-1">
-          <h3 className="text-lg font-semibold text-white mb-2">
+          <h3 className="font-display text-base font-semibold text-white mb-1.5">
             {achievement.title}
           </h3>
 
-          <div className="flex items-center gap-1 text-sm text-blue-300 mb-3">
-            <Calendar className="w-4 h-4" />
+          <div className="flex items-center gap-1 text-xs text-gray-400 font-mono mb-3">
+            <Calendar className="w-3.5 h-3.5" />
             {achievement.date}
           </div>
 
-          <p className="text-gray-300 text-sm leading-relaxed">
+          <p className="text-gray-300/90 text-sm leading-relaxed">
             {achievement.description}
           </p>
-
-          <div className="mt-3">
-            <span
-              className={`px-2 py-1 text-xs rounded-full border ${getCategoryColor(
-                achievement.category
-              )} text-white`}
-            >
-              {achievement.category}
-            </span>
-          </div>
         </div>
       </div>
     </div>

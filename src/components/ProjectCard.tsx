@@ -1,82 +1,77 @@
 import React from "react";
 import { ExternalLink } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { Project } from "@/types";
+import { cn } from "@/lib/utils";
 
 interface ProjectCardProps {
   project: Project;
+  featured?: boolean;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured = false }) => {
   return (
-    <div className="glass-card group hover:scale-105 transition-all duration-300 overflow-hidden">
+    <div
+      className={cn(
+        "glass-card group overflow-hidden flex flex-col hover:-translate-y-1 hover:rotate-[0.3deg] transition-all duration-300",
+        featured && "sm:col-span-2 sm:row-span-2"
+      )}
+    >
       {project.imageUrl && (
         <div className="relative overflow-hidden">
           <img
             src={project.imageUrl}
             alt={project.title}
-            className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+            className={cn(
+              "w-full object-cover group-hover:scale-105 transition-transform duration-500",
+              featured ? "h-64" : "h-40"
+            )}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#150f1f]/80 via-transparent to-transparent" />
         </div>
       )}
 
-      <div className="p-6">
-        <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-blue-300 transition-colors">
+      <div className="p-6 flex flex-col flex-1">
+        <h3 className="font-display text-lg font-semibold text-white mb-2 group-hover:text-coral transition-colors">
           {project.title}
         </h3>
 
-        <p className="text-gray-300 mb-4 text-sm leading-relaxed">
+        <p className="text-gray-300/90 mb-4 text-sm leading-relaxed flex-1">
           {project.description}
         </p>
 
         <div className="flex flex-wrap gap-2 mb-4">
           {project.technologies.map((tech, index) => (
-            <span
-              key={index}
-              className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full border border-blue-500/30"
-            >
+            <span key={index} className="chip bg-violet/10 text-violet border-violet/20">
               {tech}
             </span>
           ))}
         </div>
 
-        <div className="flex gap-2">
+        <div className="flex gap-3">
           {project.githubUrl && (
-            <Button
-              size="sm"
-              variant="outline"
-              className="bg-blue-600 text-white hover:bg-white hover:text-blue-400 transition-all duration-300"
-              asChild
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-white/90 hover:text-mint transition-colors"
             >
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FontAwesomeIcon icon={faGithub} className="w-4 h-4 mr-1" />
-                Code
-              </a>
-            </Button>
+              <FontAwesomeIcon icon={faGithub} className="w-4 h-4" />
+              Code
+            </a>
           )}
 
           {project.demoUrl && (
-            <Button
-              size="sm"
-              className="bg-blue-50 text-blue-400 border-blue-600 hover:bg-blue-100"
-              asChild
+            <a
+              href={project.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-white/90 hover:text-coral transition-colors"
             >
-              <a
-                href={project.demoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <ExternalLink className="w-4 h-4 mr-1" />
-                Demo
-              </a>
-            </Button>
+              <ExternalLink className="w-4 h-4" />
+              Demo
+            </a>
           )}
         </div>
       </div>

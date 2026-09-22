@@ -2,9 +2,8 @@
 
 export enum SkillCategory {
   Programming = "Programming",
-  Framework = "Framework",
-  Tools = "Tools",
-  Database = "Database",
+  Framework = "Frameworks & Tools",
+  Database = "Databases",
   Specialisation = "Specialisation",
 }
 
@@ -18,7 +17,6 @@ export interface Skill {
 export interface Experience {
   title: string;
   company: string;
-  companyLogo?: string;
   duration: string;
   location: string;
   description: string;
@@ -52,4 +50,12 @@ export interface Publication {
   abstract: string;
   url?: string;
   doi?: string;
+}
+
+// Volunteering Types
+export interface Volunteering {
+  role: string;
+  organisation: string;
+  duration: string;
+  description: string;
 }

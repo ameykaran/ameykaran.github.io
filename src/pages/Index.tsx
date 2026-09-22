@@ -1,17 +1,11 @@
-import {
-  Download,
-  ExternalLink,
-  Calendar,
-  MapPin,
-  Code,
-  BookOpen,
-} from "lucide-react";
+import { ExternalLink, Calendar, MapPin, BookOpen, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ProjectCard from "@/components/ProjectCard";
 import SkillBadge from "@/components/SkillBadge";
 import ExperienceCard from "@/components/ExperienceCard";
 import AchievementCard from "@/components/AchievementCard";
 import PublicationCard from "@/components/PublicationCard";
+import VolunteeringCard from "@/components/VolunteeringCard";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -21,15 +15,25 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
-import { about as aboutData, education } from "@/data/about";
+import { about as aboutData, education, coursework } from "@/data/about";
 import { projects as projectsData } from "@/data/projects";
 import { skills } from "@/data/skills";
 import { experiences as experiencesData } from "@/data/experience";
 import { achievements } from "@/data/achievements";
 import { publications } from "@/data/publications";
+import { volunteering } from "@/data/volunteering";
 import { SkillCategory } from "@/types";
 import { openEmailClient } from "@/lib/utils";
 import { useEffect } from "react";
+
+const accentCycle = ["coral", "mint", "sun", "violet"] as const;
+
+const quickFacts = [
+  { label: "CGPA", value: "9.06", emoji: "🎓" },
+  { label: "Speed-up achieved", value: "100x", emoji: "⚡" },
+  { label: "Tokens curated for DilLeiX", value: "3B", emoji: "📚" },
+  { label: "Conference papers", value: "1 published + 2 more", emoji: "📄" },
+];
 
 const Index = () => {
   useEffect(() => {
@@ -40,77 +44,92 @@ const Index = () => {
   const experiences = experiencesData.slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900">
-      {/* Header/Hero Section */}
-      <section className="relative px-6 py-20 text-center">
-        <div className="max-w-4xl mx-auto">
-          <div className="glass-card p-8 mb-8">
-            <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-slate-600 to-blue-600 shadow-2xl overflow-hidden">
-              <img
-                className="w-full h-full object-cover"
-                src="./photo.jpeg"
-                alt="Profile Picture"
-              />
-            </div>
-            <h1 className="text-5xl font-bold text-white mb-4 bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+    <div className="min-h-screen pb-24">
+      {/* Hero */}
+      <section className="px-4 sm:px-6 pt-14 pb-10">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-5">
+          <div className="glass-card sm:col-span-2 p-8 sm:p-10 flex flex-col justify-center animate-fade-up">
+            <span className="section-eyebrow">
+              <Sparkles className="w-3.5 h-3.5" /> hey, I'm
+            </span>
+            <h1 className="font-display text-4xl sm:text-5xl font-extrabold text-white mb-3 tracking-tight">
               {aboutData.name}
             </h1>
-            <p className="text-xl text-blue-200 mb-6">{aboutData.tagline}</p>
-            <p className="text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
+            <p className="text-lg text-coral font-medium mb-4">{aboutData.tagline}</p>
+            <p className="text-gray-300/90 max-w-xl leading-relaxed mb-7">
               {aboutData.bio}
             </p>
-            <div className="flex flex-wrap gap-4 justify-center">
+            <div className="flex flex-wrap gap-3">
               <Button
                 onClick={() => openEmailClient(aboutData.email)}
-                className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
+                className="rounded-full bg-coral text-[#150f1f] hover:bg-coral/90 hover:scale-105 transition-all duration-300 font-semibold"
               >
                 <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4 mr-2" />
                 Contact Me
               </Button>
-              <a
-                href={aboutData.resumePath}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={aboutData.resumePath} target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="outline"
-                  className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white transition-all duration-300"
+                  className="rounded-full border-white/20 bg-transparent text-white hover:bg-white/10 hover:scale-105 transition-all duration-300"
                 >
-                  <Download className="w-4 h-4 mr-2" />
-                  Download Resume
+                  View Resume
                 </Button>
               </a>
+            </div>
+          </div>
+
+          <div className="glass-card p-6 sm:p-8 flex flex-col items-center text-center justify-center gap-4 animate-fade-up [animation-delay:100ms]">
+            <div className="w-28 h-28 rounded-[1.5rem] overflow-hidden ring-4 ring-coral/30 shadow-xl">
+              <img
+                className="w-full h-full object-cover"
+                src="./photo.jpeg"
+                alt="Amey Karan"
+              />
+            </div>
+            <div className="grid grid-cols-2 gap-2 w-full">
+              {quickFacts.map((fact) => (
+                <div key={fact.label} className="rounded-2xl bg-white/[0.04] border border-white/10 px-2 py-3">
+                  <div className="text-lg">{fact.emoji}</div>
+                  <div className="font-display font-bold text-white text-sm leading-tight">
+                    {fact.value}
+                  </div>
+                  <div className="text-[10px] text-gray-400 leading-tight">{fact.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-6 space-y-20 pb-20">
-        {/* Education Section */}
-        <section>
-          <h2 className="text-3xl font-bold text-white mb-8 text-center">
-            Education
-          </h2>
-          <div className="space-y-6">
-            {education.map((education, index) => (
-              <div key={index} className="glass-card p-6">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 space-y-20">
+        {/* Education */}
+        <section id="education">
+          <h2 className="section-title">Education</h2>
+          <div className="space-y-5">
+            {education.map((edu, index) => (
+              <div key={index} className="glass-card p-6 hover:-translate-y-0.5 transition-all duration-300">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-slate-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <BookOpen className="w-6 h-6 text-white" />
+                  <div className="w-11 h-11 rounded-2xl bg-violet/15 border border-violet/30 text-violet flex items-center justify-center flex-shrink-0">
+                    <BookOpen className="w-5 h-5" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-white mb-2">
-                      {education.degree}
-                    </h3>
-                    <p className="text-blue-200 mb-2">{education.school}</p>
-                    <div className="flex flex-wrap gap-4 text-gray-300 text-sm">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                      <h3 className="font-display text-lg font-semibold text-white">
+                        {edu.degree}
+                      </h3>
+                      <span className="chip bg-sun/10 text-sun border-sun/25 w-fit">
+                        {edu.detail}
+                      </span>
+                    </div>
+                    <p className="text-gray-300/90 mb-2 text-sm">{edu.school}</p>
+                    <div className="flex flex-wrap gap-4 text-gray-400 text-xs font-mono">
                       <div className="flex items-center gap-1">
-                        <Calendar className="w-4 h-4" />
-                        {education.gradDate}
+                        <Calendar className="w-3.5 h-3.5" />
+                        {edu.gradDate}
                       </div>
                       <div className="flex items-center gap-1">
-                        <MapPin className="w-4 h-4" />
-                        {education.place}
+                        <MapPin className="w-3.5 h-3.5" />
+                        {edu.place}
                       </div>
                     </div>
                   </div>
@@ -120,15 +139,13 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Skills Section */}
-        <section>
-          <h2 className="text-3xl font-bold text-white mb-8 text-center">
-            Skills & Technologies
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Skills */}
+        <section id="skills">
+          <h2 className="section-title">Skills & Technologies</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {Object.values(SkillCategory).map((category) => (
               <div key={category} className="glass-card p-6">
-                <h3 className="text-xl font-semibold text-white mb-4">
+                <h3 className="font-display text-base font-semibold text-white mb-4">
                   {category}
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -141,23 +158,33 @@ const Index = () => {
               </div>
             ))}
           </div>
+          <div className="glass-card p-6 mt-5">
+            <h3 className="font-display text-base font-semibold text-white mb-4">
+              Relevant Coursework
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {coursework.map((course) => (
+                <span key={course} className="chip bg-white/5 text-gray-300 border-white/10">
+                  {course}
+                </span>
+              ))}
+            </div>
+          </div>
         </section>
 
-        {/* Featured Projects Section */}
-        <section>
-          <h2 className="text-3xl font-bold text-white mb-8 text-center">
-            Featured Projects
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Featured Projects */}
+        <section id="projects">
+          <h2 className="section-title">Featured Projects</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {projects.map((project, index) => (
-              <ProjectCard key={index} project={project} />
+              <ProjectCard key={index} project={project} featured={index === 0} />
             ))}
           </div>
           <div className="text-center mt-8">
             <Button
               asChild
               variant="outline"
-              className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"
+              className="rounded-full border-white/20 bg-transparent text-white hover:bg-white/10"
             >
               <a href="/#/projects">
                 View All Projects
@@ -167,106 +194,94 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Recent Experience Section */}
-        <section>
-          <h2 className="text-3xl font-bold text-white mb-8 text-center">
-            Recent Experience
-          </h2>
-          <div className="space-y-6">
+        {/* Recent Experience */}
+        <section id="experience">
+          <h2 className="section-title">Recent Experience</h2>
+          <div className="space-y-5">
             {experiences.map((experience, index) => (
-              <ExperienceCard key={index} experience={experience} />
+              <ExperienceCard
+                key={index}
+                experience={experience}
+                accent={accentCycle[index % accentCycle.length]}
+              />
             ))}
           </div>
           <div className="text-center mt-8">
             <Button
               asChild
               variant="outline"
-              className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"
+              className="rounded-full border-white/20 bg-transparent text-white hover:bg-white/10"
             >
               <a href="/#/experience">
-                View All Experiences
+                View All Experience
                 <ExternalLink className="w-4 h-4 ml-2" />
               </a>
             </Button>
           </div>
         </section>
 
-        {/* Publications Section */}
-        <section>
-          <h2 className="text-3xl font-bold text-white mb-8 text-center">
-            Research Publications
-          </h2>
-          <div className="space-y-6">
+        {/* Publications */}
+        <section id="publications">
+          <h2 className="section-title">Research Publications</h2>
+          <div className="space-y-5">
             {publications.map((publication, index) => (
               <PublicationCard key={index} publication={publication} />
             ))}
           </div>
         </section>
 
-        {/* Achievements Section */}
-        <section>
-          <h2 className="text-3xl font-bold text-white mb-8 text-center">
-            Achievements & Certifications
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Achievements */}
+        <section id="achievements">
+          <h2 className="section-title">Achievements</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {achievements.map((achievement, index) => (
               <AchievementCard key={index} achievement={achievement} />
             ))}
           </div>
         </section>
-      </div>
 
-      <div className="max-w-4xl mx-auto  pb-20">
-        {/* Contact Section */}
-        <section className="text-center">
-          <h2 className="text-3xl font-bold text-white mb-8">Let's Connect</h2>
-          <div className="glass-card p-8">
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+        {/* Volunteering */}
+        <section id="volunteering">
+          <h2 className="section-title">Volunteering</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {volunteering.map((role, index) => (
+              <VolunteeringCard key={index} volunteering={role} />
+            ))}
+          </div>
+        </section>
+
+        {/* Contact */}
+        <section id="contact" className="text-center">
+          <h2 className="section-title">Let's Connect</h2>
+          <div className="glass-card p-8 sm:p-10">
+            <p className="text-gray-300/90 mb-6 max-w-2xl mx-auto">
               I'm always open to discussing new opportunities, collaborating on
               projects, or just having a chat about technology. Feel free to
               reach out!
             </p>
-            <div className="flex justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-3">
               <Button
                 onClick={() => openEmailClient(aboutData.email)}
-                className="bg-blue-600 hover:bg-blue-700 text-white"
+                className="rounded-full bg-coral text-[#150f1f] hover:bg-coral/90 hover:scale-105 transition-all duration-300 font-semibold"
               >
                 <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4 mr-2" />
                 Email
               </Button>
-              <a
-                href={aboutData.github}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+              <a href={aboutData.github} target="_blank" rel="noopener noreferrer">
+                <Button className="rounded-full bg-white/10 text-white hover:bg-white/20 hover:scale-105 transition-all duration-300">
                   <FontAwesomeIcon icon={faGithub} className="w-4 h-4 mr-2" />
                   GitHub
                 </Button>
               </a>
-              <a
-                href={aboutData.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                  <FontAwesomeIcon
-                    icon={faSquareLinkedin}
-                    className="w-4 h-4 mr-2"
-                  />
+              <a href={aboutData.linkedin} target="_blank" rel="noopener noreferrer">
+                <Button className="rounded-full bg-white/10 text-white hover:bg-white/20 hover:scale-105 transition-all duration-300">
+                  <FontAwesomeIcon icon={faSquareLinkedin} className="w-4 h-4 mr-2" />
                   LinkedIn
                 </Button>
               </a>
-              <a
-                href={aboutData.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                  <FontAwesomeIcon
-                    icon={faInstagram}
-                    className="w-4 h-4 mr-2"
-                  />
+              <a href={aboutData.instagram} target="_blank" rel="noopener noreferrer">
+                <Button className="rounded-full bg-white/10 text-white hover:bg-white/20 hover:scale-105 transition-all duration-300">
+                  <FontAwesomeIcon icon={faInstagram} className="w-4 h-4 mr-2" />
                   Instagram
                 </Button>
               </a>

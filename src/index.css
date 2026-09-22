@@ -7,7 +7,7 @@
 @layer base {
   html,
   body {
-    background-color: #0f172a;
+    background-color: #150f1f;
     overscroll-behavior: none;
   }
 
@@ -57,6 +57,12 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Playful accent palette */
+    --accent-coral: 355 85% 68%;
+    --accent-mint: 168 60% 55%;
+    --accent-sun: 42 95% 63%;
+    --accent-violet: 262 70% 72%;
   }
 
   .dark {
@@ -104,28 +110,85 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+
+  ::selection {
+    @apply bg-coral/30 text-white;
   }
 }
 
-/* Custom Glassmorphism Styles */
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--accent-violet) / 0.4);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent-violet) / 0.6);
+}
+
+/* App background: deep, warm, slightly plum instead of flat slate */
+.app-bg {
+  background: radial-gradient(
+      120% 100% at 10% 0%,
+      hsl(var(--accent-violet) / 0.16),
+      transparent 55%
+    ),
+    radial-gradient(120% 100% at 90% 15%, hsl(var(--accent-coral) / 0.12), transparent 50%),
+    linear-gradient(180deg, #17111f 0%, #150f1f 45%, #120c19 100%);
+}
+
+/* Custom Glassmorphism Styles, warmed up + rounder for a cutesy feel */
 @layer components {
   .glass-card {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl shadow-2xl;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37),
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+    @apply relative bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-[1.75rem] shadow-2xl;
+    box-shadow: 0 10px 40px 0 rgba(20, 10, 30, 0.45),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
   }
 
   .glass-card:hover {
-    @apply bg-white/10 border-white/20;
-    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5),
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+    @apply bg-white/[0.07] border-white/20;
+    box-shadow: 0 16px 48px 0 rgba(244, 118, 123, 0.18),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .chip {
+    @apply px-3 py-1 rounded-full text-xs font-medium border transition-all duration-300;
+  }
+
+  .section-eyebrow {
+    @apply font-mono text-xs tracking-widest uppercase text-coral/80 mb-2 inline-flex items-center gap-2;
+  }
+
+  .section-title {
+    @apply font-display text-3xl sm:text-4xl font-bold text-white mb-10 tracking-tight;
+  }
+
+  .blob {
+    @apply absolute rounded-full blur-3xl opacity-40 pointer-events-none animate-blob;
   }
 }
 
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-blob,
+  .animate-float,
+  .animate-gradient {
+    animation: none !important;
+  }
 }
 
 /* Custom animations */

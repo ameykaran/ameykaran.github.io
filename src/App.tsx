@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import Projects from "./pages/Projects";
 import Experience from "./pages/Experience";
 import NotFound from "./pages/NotFound";
+import Navbar from "@/components/Navbar";
+import BackgroundBlobs from "@/components/BackgroundBlobs";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +18,8 @@ const App = () => (
       <Toaster />
       <Sonner />
       <HashRouter>
+        <BackgroundBlobs />
+        <Navbar />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/projects" element={<Projects />} />

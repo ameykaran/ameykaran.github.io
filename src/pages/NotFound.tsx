@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 
 const NotFound = () => {
@@ -15,20 +15,19 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900  flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 text-white">
-          <span role="img" aria-label="broken rocket">
-            💥
-          </span>
-          Uh Oh!
+    <div className="min-h-[80vh] flex items-center justify-center px-6">
+      <div className="glass-card p-10 text-center max-w-md">
+        <div className="text-5xl mb-4">💥</div>
+        <h1 className="font-display text-3xl font-extrabold mb-3 text-white">
+          Uh oh!
         </h1>
-        <p className="text-xl text-gray-600 mb-4 text-slate-300">
-          You're lost in space
-        </p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
+        <p className="text-gray-300/90 mb-6">You're lost in space.</p>
+        <Link
+          to="/"
+          className="inline-flex items-center rounded-full bg-coral text-[#150f1f] font-semibold px-5 py-2 hover:bg-coral/90 hover:scale-105 transition-all duration-300"
+        >
           Let's take you back home
-        </a>
+        </Link>
       </div>
     </div>
   );
