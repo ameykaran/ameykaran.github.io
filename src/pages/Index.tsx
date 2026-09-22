@@ -72,21 +72,13 @@ const Index = () => {
           </div>
 
           <div className="glass-card p-6 sm:p-8 flex flex-col items-center text-center justify-center gap-4 animate-fade-up [animation-delay:100ms]">
-            <div className="w-28 h-28 rounded-[1.5rem] overflow-hidden ring-4 ring-blue/30 shadow-xl">
+            <div className="w-44 h-44 rounded-[1.75rem] overflow-hidden ring-4 ring-blue/30 shadow-xl">
               <img
                 className="w-full h-full object-cover"
                 src="./photo.jpeg"
                 alt="Amey Karan"
               />
             </div>
-            <img
-              src="./brand-mark.png"
-              alt="Amey Karan hand-lettered brand mark, in Hindi, Tamil and English"
-              className="w-36 h-36 object-contain animate-float drop-shadow-[0_0_28px_hsl(var(--accent-blue)/0.35)]"
-            />
-            <p className="text-xs text-gray-400 font-mono tracking-wide">
-              my name, in three scripts
-            </p>
           </div>
         </div>
       </section>
