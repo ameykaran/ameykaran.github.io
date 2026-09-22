@@ -1,10 +1,4 @@
-import {
-  ExternalLink,
-  Calendar,
-  MapPin,
-  BookOpen,
-  Sparkles,
-} from "lucide-react";
+import { Calendar, MapPin, BookOpen, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ProjectCard from "@/components/ProjectCard";
 import SkillBadge from "@/components/SkillBadge";
@@ -39,8 +33,8 @@ const Index = () => {
     document.title = "Portfolio | Amey Karan";
   }, []);
 
-  const projects = projectsData.slice(0, 3);
-  const experiences = experiencesData.slice(0, 3);
+  const projects = projectsData;
+  const experiences = experiencesData;
 
   return (
     <div className="min-h-screen pb-24">
@@ -172,9 +166,9 @@ const Index = () => {
           </div> */}
         </section>
 
-        {/* Featured Projects */}
+        {/* Projects */}
         <section id="projects">
-          <h2 className="section-title">Featured Projects</h2>
+          <h2 className="section-title">Projects</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {projects.map((project, index) => (
               <ProjectCard
@@ -184,23 +178,11 @@ const Index = () => {
               />
             ))}
           </div>
-          <div className="text-center mt-8">
-            <Button
-              asChild
-              variant="outline"
-              className="rounded-full border-white/20 bg-transparent text-white hover:bg-white/10"
-            >
-              <a href="/#/projects">
-                View All Projects
-                <ExternalLink className="w-4 h-4 ml-2" />
-              </a>
-            </Button>
-          </div>
         </section>
 
-        {/* Recent Experience */}
+        {/* Experience */}
         <section id="experience">
-          <h2 className="section-title">Recent Experience</h2>
+          <h2 className="section-title">Experience</h2>
           <div className="space-y-5">
             {experiences.map((experience, index) => (
               <ExperienceCard
@@ -209,18 +191,6 @@ const Index = () => {
                 accent={accentCycle[index % accentCycle.length]}
               />
             ))}
-          </div>
-          <div className="text-center mt-8">
-            <Button
-              asChild
-              variant="outline"
-              className="rounded-full border-white/20 bg-transparent text-white hover:bg-white/10"
-            >
-              <a href="/#/experience">
-                View All Experience
-                <ExternalLink className="w-4 h-4 ml-2" />
-              </a>
-            </Button>
           </div>
         </section>
 
