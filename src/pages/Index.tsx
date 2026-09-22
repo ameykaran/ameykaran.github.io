@@ -71,14 +71,12 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="glass-card p-6 sm:p-8 flex flex-col items-center text-center justify-center gap-4 animate-fade-up [animation-delay:100ms]">
-            <div className="w-44 h-44 rounded-[1.75rem] overflow-hidden ring-4 ring-blue/30 shadow-xl">
-              <img
-                className="w-full h-full object-cover"
-                src="./photo.jpeg"
-                alt="Amey Karan"
-              />
-            </div>
+          <div className="glass-card overflow-hidden min-h-[16rem] sm:min-h-0 animate-fade-up [animation-delay:100ms]">
+            <img
+              className="w-full h-full object-cover"
+              src="./photo.jpeg"
+              alt="Amey Karan"
+            />
           </div>
         </div>
       </section>
