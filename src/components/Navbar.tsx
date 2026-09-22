@@ -19,9 +19,9 @@ const Navbar = () => {
       <nav className="max-w-5xl mx-auto flex items-center justify-between gap-4 rounded-full border border-white/10 bg-[#150f1f]/70 backdrop-blur-xl px-4 sm:px-6 py-3 shadow-lg">
         <Link
           to="/"
-          className="font-display font-bold text-white text-lg tracking-tight hover:text-coral transition-colors"
+          className="font-display font-bold text-white text-lg tracking-tight hover:text-blue transition-colors"
         >
-          Amey<span className="text-coral">.</span>
+          Amey<span className="text-blue">.</span>
         </Link>
 
         <div className="hidden sm:flex items-center gap-1">
@@ -61,7 +61,7 @@ const Navbar = () => {
             <FontAwesomeIcon icon={faLinkedin} className="w-4 h-4" />
           </a>
           <a href={about.resumePath} target="_blank" rel="noopener noreferrer">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-coral text-[#150f1f] text-sm font-semibold px-4 py-1.5 hover:bg-coral/90 hover:scale-105 transition-all duration-300">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-blue text-[#150f1f] text-sm font-semibold px-4 py-1.5 hover:bg-blue/90 hover:scale-105 transition-all duration-300">
               <Download className="w-3.5 h-3.5" />
               Resume
             </span>

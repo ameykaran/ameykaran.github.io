@@ -63,7 +63,7 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        coral: "hsl(var(--accent-coral))",
+        blue: "hsl(var(--accent-blue))",
         mint: "hsl(var(--accent-mint))",
         sun: "hsl(var(--accent-sun))",
         violet: "hsl(var(--accent-violet))",

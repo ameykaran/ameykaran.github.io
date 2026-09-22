@@ -33,7 +33,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured = false }) 
       )}
 
       <div className="p-6 flex flex-col flex-1">
-        <h3 className="font-display text-lg font-semibold text-white mb-2 group-hover:text-coral transition-colors">
+        <h3 className="font-display text-lg font-semibold text-white mb-2 group-hover:text-blue transition-colors">
           {project.title}
         </h3>
 
@@ -67,7 +67,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, featured = false }) 
               href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-white/90 hover:text-coral transition-colors"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-white/90 hover:text-blue transition-colors"
             >
               <ExternalLink className="w-4 h-4" />
               Demo

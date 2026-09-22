@@ -15,7 +15,7 @@ const styleFor = (category: string) => {
     case "Academic":
       return { icon: GraduationCap, classes: "bg-violet/15 text-violet border-violet/30" };
     default:
-      return { icon: Award, classes: "bg-coral/15 text-coral border-coral/30" };
+      return { icon: Award, classes: "bg-blue/15 text-blue border-blue/30" };
   }
 };
 

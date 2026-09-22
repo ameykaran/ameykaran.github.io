@@ -4,17 +4,17 @@ import { Experience } from "@/types";
 
 interface ExperienceCardProps {
   experience: Experience;
-  accent?: "coral" | "mint" | "sun" | "violet";
+  accent?: "blue" | "mint" | "sun" | "violet";
 }
 
 const accentClasses: Record<string, string> = {
-  coral: "bg-coral/15 text-coral border-coral/30",
+  blue: "bg-blue/15 text-blue border-blue/30",
   mint: "bg-mint/15 text-mint border-mint/30",
   sun: "bg-sun/15 text-sun border-sun/30",
   violet: "bg-violet/15 text-violet border-violet/30",
 };
 
-const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, accent = "coral" }) => {
+const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience, accent = "blue" }) => {
   return (
     <div className="glass-card p-6 sm:p-7 hover:-translate-y-0.5 transition-all duration-300">
       <div className="flex items-start gap-4">

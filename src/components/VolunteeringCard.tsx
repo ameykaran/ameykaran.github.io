@@ -18,7 +18,7 @@ const VolunteeringCard: React.FC<VolunteeringCardProps> = ({ volunteering }) => 
           <h3 className="font-display text-base font-semibold text-white mb-1">
             {volunteering.role}
           </h3>
-          <p className="text-sm text-coral font-medium mb-2">{volunteering.organisation}</p>
+          <p className="text-sm text-blue font-medium mb-2">{volunteering.organisation}</p>
 
           <div className="flex items-center gap-1 text-xs text-gray-400 font-mono mb-3">
             <Calendar className="w-3.5 h-3.5" />

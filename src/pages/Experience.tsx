@@ -5,7 +5,7 @@ import ExperienceCard from "@/components/ExperienceCard";
 import { Link } from "react-router-dom";
 import { experiences } from "@/data/experience";
 
-const accentCycle = ["coral", "mint", "sun", "violet"] as const;
+const accentCycle = ["blue", "mint", "sun", "violet"] as const;
 
 const Experience = () => {
   useEffect(() => {

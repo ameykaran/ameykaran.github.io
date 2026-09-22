@@ -12,7 +12,7 @@ const getLevelClasses = (level: string) => {
     case "Intermediate":
       return "bg-mint/10 text-mint border-mint/25";
     case "Advanced":
-      return "bg-coral/10 text-coral border-coral/25";
+      return "bg-blue/10 text-blue border-blue/25";
     default:
       return "bg-white/5 text-gray-300 border-white/10";
   }

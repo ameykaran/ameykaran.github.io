@@ -26,14 +26,7 @@ import { SkillCategory } from "@/types";
 import { openEmailClient } from "@/lib/utils";
 import { useEffect } from "react";
 
-const accentCycle = ["coral", "mint", "sun", "violet"] as const;
-
-const quickFacts = [
-  { label: "CGPA", value: "9.06", emoji: "🎓" },
-  { label: "Speed-up achieved", value: "100x", emoji: "⚡" },
-  { label: "Tokens curated for DilLeiX", value: "3B", emoji: "📚" },
-  { label: "Conference papers", value: "1 published + 2 more", emoji: "📄" },
-];
+const accentCycle = ["blue", "mint", "sun", "violet"] as const;
 
 const Index = () => {
   useEffect(() => {
@@ -55,14 +48,14 @@ const Index = () => {
             <h1 className="font-display text-4xl sm:text-5xl font-extrabold text-white mb-3 tracking-tight">
               {aboutData.name}
             </h1>
-            <p className="text-lg text-coral font-medium mb-4">{aboutData.tagline}</p>
+            <p className="text-lg text-blue font-medium mb-4">{aboutData.tagline}</p>
             <p className="text-gray-300/90 max-w-xl leading-relaxed mb-7">
               {aboutData.bio}
             </p>
             <div className="flex flex-wrap gap-3">
               <Button
                 onClick={() => openEmailClient(aboutData.email)}
-                className="rounded-full bg-coral text-[#150f1f] hover:bg-coral/90 hover:scale-105 transition-all duration-300 font-semibold"
+                className="rounded-full bg-blue text-[#150f1f] hover:bg-blue/90 hover:scale-105 transition-all duration-300 font-semibold"
               >
                 <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4 mr-2" />
                 Contact Me
@@ -79,24 +72,21 @@ const Index = () => {
           </div>
 
           <div className="glass-card p-6 sm:p-8 flex flex-col items-center text-center justify-center gap-4 animate-fade-up [animation-delay:100ms]">
-            <div className="w-28 h-28 rounded-[1.5rem] overflow-hidden ring-4 ring-coral/30 shadow-xl">
+            <div className="w-28 h-28 rounded-[1.5rem] overflow-hidden ring-4 ring-blue/30 shadow-xl">
               <img
                 className="w-full h-full object-cover"
                 src="./photo.jpeg"
                 alt="Amey Karan"
               />
             </div>
-            <div className="grid grid-cols-2 gap-2 w-full">
-              {quickFacts.map((fact) => (
-                <div key={fact.label} className="rounded-2xl bg-white/[0.04] border border-white/10 px-2 py-3">
-                  <div className="text-lg">{fact.emoji}</div>
-                  <div className="font-display font-bold text-white text-sm leading-tight">
-                    {fact.value}
-                  </div>
-                  <div className="text-[10px] text-gray-400 leading-tight">{fact.label}</div>
-                </div>
-              ))}
-            </div>
+            <img
+              src="./brand-mark.png"
+              alt="Amey Karan hand-lettered brand mark, in Hindi, Tamil and English"
+              className="w-36 h-36 object-contain animate-float drop-shadow-[0_0_28px_hsl(var(--accent-blue)/0.35)]"
+            />
+            <p className="text-xs text-gray-400 font-mono tracking-wide">
+              my name, in three scripts
+            </p>
           </div>
         </div>
       </section>
@@ -262,7 +252,7 @@ const Index = () => {
             <div className="flex flex-wrap justify-center gap-3">
               <Button
                 onClick={() => openEmailClient(aboutData.email)}
-                className="rounded-full bg-coral text-[#150f1f] hover:bg-coral/90 hover:scale-105 transition-all duration-300 font-semibold"
+                className="rounded-full bg-blue text-[#150f1f] hover:bg-blue/90 hover:scale-105 transition-all duration-300 font-semibold"
               >
                 <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4 mr-2" />
                 Email

@@ -24,7 +24,7 @@ const NotFound = () => {
         <p className="text-gray-300/90 mb-6">You're lost in space.</p>
         <Link
           to="/"
-          className="inline-flex items-center rounded-full bg-coral text-[#150f1f] font-semibold px-5 py-2 hover:bg-coral/90 hover:scale-105 transition-all duration-300"
+          className="inline-flex items-center rounded-full bg-blue text-[#150f1f] font-semibold px-5 py-2 hover:bg-blue/90 hover:scale-105 transition-all duration-300"
         >
           Let's take you back home
         </Link>

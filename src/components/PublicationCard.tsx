@@ -19,7 +19,7 @@ const PublicationCard: React.FC<PublicationCardProps> = ({ publication }) => {
       </div>
 
       <div className="flex flex-wrap items-center gap-3 text-sm mb-3">
-        <span className="chip bg-coral/10 text-coral border-coral/20">{publication.venue}</span>
+        <span className="chip bg-blue/10 text-blue border-blue/20">{publication.venue}</span>
         <span className="inline-flex items-center gap-1 text-gray-400 font-mono text-xs">
           <Calendar className="w-3.5 h-3.5" />
           {publication.year}
@@ -48,7 +48,7 @@ const PublicationCard: React.FC<PublicationCardProps> = ({ publication }) => {
               href={`https://doi.org/${publication.doi}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-400 hover:text-coral transition-colors"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-400 hover:text-blue transition-colors"
             >
               DOI
             </a>
