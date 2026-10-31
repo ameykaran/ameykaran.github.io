@@ -42,6 +42,22 @@ export const projects: Project[] = [
     imageUrl: "./projects/ocr-crnn.jpg",
   },
   {
+    title: "Oriented Object Detection, Multi-Task U-Net & PointNet",
+    description:
+      "Extended Faster R-CNN to predict oriented bounding boxes and visualised its RPN and RoI-head stages. Trained a multi-task U-Net for segmentation and depth with an uncertainty-weighted loss (0.87 mIoU), and a PointNet classifier (90.4% accuracy) with critical-point analysis.",
+    technologies: ["PyTorch", "Faster R-CNN", "U-Net", "PointNet", "W&B"],
+    githubUrl: "https://github.com/ameykaran/cv-assignment-3",
+    imageUrl: "./projects/cv-oriented-bbox.jpg",
+  },
+  {
+    title: "Vision Transformers, CLIP & ClipCap",
+    description:
+      "Built ViT and CvT from scratch on CIFAR-10 with ablations over patch size, positional encodings and augmentation, plus attention-rollout and DINO attention maps. Evaluated zero-shot CLIP, and studied ClipCap captioning across mapper type, prefix length and interpretability.",
+    technologies: ["PyTorch", "ViT", "CvT", "CLIP", "GPT-2"],
+    githubUrl: "https://github.com/ameykaran/cv-assignment-4",
+    imageUrl: "./projects/cv-vit-attention.jpg",
+  },
+  {
     title: "Rudra's Subscription Service - Refactoring",
     description:
       "Refactored Sismics RSS Reader using UML diagrams, Designite and Sonarqube for identifying code smells, implementing design patterns, and LLM-assisted automated refactoring.",
@@ -96,6 +112,22 @@ export const projects: Project[] = [
     technologies: ["C", "MakeFile", "SIMD", "CUDA", "OpenMP"],
     githubUrl: "https://github.com/ameykaran/matrix-optimization",
     imageUrl: "./projects/matrix-multiplication.jpg",
+  },
+  {
+    title: "Extended λ-Calculus Interpreter",
+    description:
+      "Interpreter for a λ-calculus extended with let*, mutually recursive letrec, a mutable store, loops and arrays. It follows a store-threading big-step operational semantics and includes an s-expression parser and a desugaring-based variant.",
+    technologies: ["Python", "Operational Semantics", "Interpreters", "PL Theory"],
+    githubUrl: "https://github.com/ameykaran/lambda-calculus-interpreter",
+    imageUrl: "./projects/lambda-interpreter.jpg",
+  },
+  {
+    title: "Mapcode - Dynamic Programming as Fixed Points",
+    description:
+      "Edit distance and merge sort written as (ρ, F, π) fixed-point computations, with a termination function σ checked on every step. Includes a Typst library that runs mapcode programs and draws each intermediate state.",
+    technologies: ["Python", "Typst", "Fixed-Point Semantics", "Dynamic Programming"],
+    githubUrl: "https://github.com/ameykaran/mapcode-dynamic-programming",
+    imageUrl: "./projects/mapcode.jpg",
   },
 
   {
