@@ -34,7 +34,7 @@ export const experiences: Experience[] = [
     duration: "May 2024 - Present",
     location: "IIIT Hyderabad",
     description:
-      "Researching the intersection of Generative AI and Software Architecture, currently exploring the possibility of extracting design decisions from source code using Large Language Models.",
+      "Researching the intersection of Generative AI and Software Architecture, currently exploring the possibility of extracting design decisions from source code commits using Large Language Models.",
     achievements: [
       "Conducted experiments on multiple open-source projects to evaluate LLMs for design decision extraction",
     ],

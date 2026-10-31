@@ -19,26 +19,11 @@ export const projects: Project[] = [
     imageUrl: "./projects/dilleix.jpg",
   },
   {
-    title: "Legends of Stonks - Stock Market Learning Platform",
-    description:
-      "Gamified stock market learning platform with service-oriented architecture (7 microservices), Dockerised deployment, and nginx reverse proxy.",
-    technologies: [
-      "Python",
-      "Docker",
-      "Nginx",
-      "PostgreSQL",
-      "NextJS",
-      "FastAPI",
-    ],
-    githubUrl: "https://github.com/ameykaran/legends-of-stonks",
-    imageUrl: "./projects/legends-of-stonks.jpg",
-  },
-  {
     title: "OCR using CRNNs",
     description:
       "Built and trained machine learning models for extracting text from images using CNN encoder and RNN as decoder for auto-regressive modelling, achieving an accuracy of 77.16%.",
     technologies: ["Python", "PyTorch", "CNN", "RNN", "OCR"],
-    githubUrl: "https://github.com/ameykaran/ocr-crnn",
+    githubUrl: "https://github.com/ameykaran/smai-assignments",
     imageUrl: "./projects/ocr-crnn.jpg",
   },
   {
@@ -58,6 +43,21 @@ export const projects: Project[] = [
     imageUrl: "./projects/cv-vit-attention.jpg",
   },
   {
+    title: "Legends of Stonks - Stock Market Learning Platform",
+    description:
+      "Gamified stock market learning platform with service-oriented architecture (7 microservices), Dockerised deployment, and nginx reverse proxy.",
+    technologies: [
+      "Python",
+      "Docker",
+      "Nginx",
+      "PostgreSQL",
+      "NextJS",
+      "FastAPI",
+    ],
+    githubUrl: "https://github.com/ameykaran/legends-of-stonks",
+    imageUrl: "./projects/legends-of-stonks.jpg",
+  },
+  {
     title: "Rudra's Subscription Service - Refactoring",
     description:
       "Refactored Sismics RSS Reader using UML diagrams, Designite and Sonarqube for identifying code smells, implementing design patterns, and LLM-assisted automated refactoring.",
@@ -69,15 +69,41 @@ export const projects: Project[] = [
       "Designite",
       "Sonarqube",
     ],
-    githubUrl: "https://github.com/ameykaran/rudra-subscription",
+    githubUrl: "https://github.com/ameykaran/rss-reader",
     imageUrl: "./projects/rudra-subscription.jpg",
+  },
+  {
+    title: "Extended λ-Calculus Interpreter",
+    description:
+      "Interpreter for a λ-calculus extended with let*, mutually recursive letrec, a mutable store, loops and arrays. It follows a store-threading big-step operational semantics and includes an s-expression parser and a desugaring-based variant.",
+    technologies: [
+      "Python",
+      "Operational Semantics",
+      "Interpreters",
+      "PL Theory",
+    ],
+    githubUrl: "https://github.com/ameykaran/lambda-calculus-interpreter",
+    imageUrl: "./projects/lambda-interpreter.jpg",
+  },
+  {
+    title: "Mapcode - Dynamic Programming as Fixed Points",
+    description:
+      "Edit distance and merge sort written as (ρ, F, π) fixed-point computations, with a termination function σ checked on every step. Includes a Typst library that runs mapcode programs and draws each intermediate state.",
+    technologies: [
+      "Python",
+      "Typst",
+      "Fixed-Point Semantics",
+      "Dynamic Programming",
+    ],
+    githubUrl: "https://github.com/ameykaran/mapcode-dynamic-programming",
+    imageUrl: "./projects/mapcode.jpg",
   },
   {
     title: "Tiny Tots - Baby Growth Tracker",
     description:
       "Baby growth tracking solution built from user research insights, with Figma wireframes and ViteJS prototype.",
     technologies: ["ViteJS", "User Research", "Figma", "JavaScript"],
-    githubUrl: "https://github.com/ameykaran/tiny-tots",
+    githubUrl: "https://github.com/ameykaran/tiny-tots-tracker-app",
     demoUrl: "https://tiny-tots-tracker-app.vercel.app/",
     imageUrl: "./projects/tiny-tots.jpg",
   },
@@ -86,7 +112,7 @@ export const projects: Project[] = [
     description:
       "End-to-end online recruitment portal with job posting, application submission, interview scheduling, and CAS authentication for staff and faculty hiring.",
     technologies: ["ReactJS", "MongoDB", "NodeJS", "Express"],
-    githubUrl: "https://github.com/ameykaran/recruitment-portal",
+    githubUrl: "https://github.com/ameykaran/dass-project",
     imageUrl: "./projects/recruitment-portal.jpg",
   },
   {
@@ -110,24 +136,8 @@ export const projects: Project[] = [
     description:
       "Optimised matrix multiplication using GCC flags, SIMD vectorisation, OpenMP multi-threading, and CUDA for GPU acceleration, achieving 100x speedup.",
     technologies: ["C", "MakeFile", "SIMD", "CUDA", "OpenMP"],
-    githubUrl: "https://github.com/ameykaran/matrix-optimization",
+    githubUrl: "https://github.com/ameykaran/spp-mat-vec",
     imageUrl: "./projects/matrix-multiplication.jpg",
-  },
-  {
-    title: "Extended λ-Calculus Interpreter",
-    description:
-      "Interpreter for a λ-calculus extended with let*, mutually recursive letrec, a mutable store, loops and arrays. It follows a store-threading big-step operational semantics and includes an s-expression parser and a desugaring-based variant.",
-    technologies: ["Python", "Operational Semantics", "Interpreters", "PL Theory"],
-    githubUrl: "https://github.com/ameykaran/lambda-calculus-interpreter",
-    imageUrl: "./projects/lambda-interpreter.jpg",
-  },
-  {
-    title: "Mapcode - Dynamic Programming as Fixed Points",
-    description:
-      "Edit distance and merge sort written as (ρ, F, π) fixed-point computations, with a termination function σ checked on every step. Includes a Typst library that runs mapcode programs and draws each intermediate state.",
-    technologies: ["Python", "Typst", "Fixed-Point Semantics", "Dynamic Programming"],
-    githubUrl: "https://github.com/ameykaran/mapcode-dynamic-programming",
-    imageUrl: "./projects/mapcode.jpg",
   },
 
   {

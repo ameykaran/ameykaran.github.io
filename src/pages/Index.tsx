@@ -147,68 +147,6 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Skills */}
-        <section id="skills" className="scroll-mt-24">
-          <h2 className="section-title">Skills & Technologies</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {Object.values(SkillCategory).map((category) => (
-              <div key={category} className="glass-card p-6">
-                <h3 className="font-display text-base font-semibold text-white mb-4">
-                  {category}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {skills
-                    .filter((skill) => skill.category === category)
-                    .map((skill) => (
-                      <SkillBadge key={skill.name} skill={skill} />
-                    ))}
-                </div>
-              </div>
-            ))}
-          </div>
-          {/* <div className="glass-card p-6 mt-5">
-            <h3 className="font-display text-base font-semibold text-white mb-4">
-              Relevant Coursework
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {coursework.map((course) => (
-                <span
-                  key={course}
-                  className="chip bg-white/5 text-gray-300 border-white/10"
-                >
-                  {course}
-                </span>
-              ))}
-            </div>
-          </div> */}
-        </section>
-
-        {/* Projects */}
-        <section id="projects" className="scroll-mt-24">
-          <h2 className="section-title">Featured Projects</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {projects.map((project, index) => (
-              <ProjectCard key={index} project={project} />
-            ))}
-          </div>
-          {projectsData.length > PROJECTS_PREVIEW_COUNT && (
-            <div className="text-center mt-8">
-              <Button
-                variant="outline"
-                onClick={() => setShowAllProjects((prev) => !prev)}
-                className="rounded-full border-white/20 bg-transparent text-white hover:bg-white/10"
-              >
-                {showAllProjects ? "Show Less" : "Show More Projects"}
-                {showAllProjects ? (
-                  <ChevronUp className="w-4 h-4 ml-2" />
-                ) : (
-                  <ChevronDown className="w-4 h-4 ml-2" />
-                )}
-              </Button>
-            </div>
-          )}
-        </section>
-
         {/* Experience */}
         <section id="experience" className="scroll-mt-24">
           <h2 className="section-title">Recent Experience</h2>
@@ -245,6 +183,53 @@ const Index = () => {
           <div className="space-y-5">
             {publications.map((publication, index) => (
               <PublicationCard key={index} publication={publication} />
+            ))}
+          </div>
+        </section>
+
+        {/* Projects */}
+        <section id="projects" className="scroll-mt-24">
+          <h2 className="section-title">Featured Projects</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {projects.map((project, index) => (
+              <ProjectCard key={index} project={project} />
+            ))}
+          </div>
+          {projectsData.length > PROJECTS_PREVIEW_COUNT && (
+            <div className="text-center mt-8">
+              <Button
+                variant="outline"
+                onClick={() => setShowAllProjects((prev) => !prev)}
+                className="rounded-full border-white/20 bg-transparent text-white hover:bg-white/10"
+              >
+                {showAllProjects ? "Show Less" : "Show More Projects"}
+                {showAllProjects ? (
+                  <ChevronUp className="w-4 h-4 ml-2" />
+                ) : (
+                  <ChevronDown className="w-4 h-4 ml-2" />
+                )}
+              </Button>
+            </div>
+          )}
+        </section>
+
+        {/* Skills */}
+        <section id="skills" className="scroll-mt-24">
+          <h2 className="section-title">Skills & Technologies</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {Object.values(SkillCategory).map((category) => (
+              <div key={category} className="glass-card p-6">
+                <h3 className="font-display text-base font-semibold text-white mb-4">
+                  {category}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {skills
+                    .filter((skill) => skill.category === category)
+                    .map((skill) => (
+                      <SkillBadge key={skill.name} skill={skill} />
+                    ))}
+                </div>
+              </div>
             ))}
           </div>
         </section>
