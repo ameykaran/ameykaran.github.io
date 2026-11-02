@@ -40,7 +40,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          # Commit identity for the gh-pages commit. Set via git config because
+          # gh-pages' --user option can't parse names/emails containing "[bot]".
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898299+github-actions[bot]@users.noreply.github.com"
           pnpm exec gh-pages --dist dist \
-            --user "github-actions[bot] <41898299+github-actions[bot]@users.noreply.github.com>" \
             --repo "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git" \
             --message "Deploy ${{ github.sha }}"
