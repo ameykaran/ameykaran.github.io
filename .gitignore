@@ -23,6 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
-*-lock.*
+# pnpm-lock.yaml is committed (CI installs from it); ignore other managers' lockfiles
+package-lock.json
+yarn.lock
 node_modules
 bucklane.ttf

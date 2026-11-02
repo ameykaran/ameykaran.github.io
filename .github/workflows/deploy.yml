@@ -1,0 +1,46 @@
+# Build the site and publish dist/ to the gh-pages branch (which GitHub Pages
+# serves) on every push to master. Same result as running `pnpm run deploy`
+# locally. Can also be started by hand from the Actions tab.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: write # push to the gh-pages branch
+
+concurrency:
+  group: deploy-pages
+  cancel-in-progress: false # let a running deploy finish; the next one queues
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 12.16.1 # same as local; lockfile v9
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Publish dist/ to gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pnpm exec gh-pages --dist dist \
+            --user "github-actions[bot] <41898299+github-actions[bot]@users.noreply.github.com>" \
+            --repo "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git" \
+            --message "Deploy ${{ github.sha }}"
