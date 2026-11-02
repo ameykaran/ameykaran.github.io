@@ -4,6 +4,16 @@
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
 
+/* Bucklane Script, subset to the glyphs in "Amey Karan." (the personal-use
+   build replaces digits with watermarks, so only use it for the name). */
+@font-face {
+  font-family: "Bucklane";
+  src: url("/fonts/bucklane-name.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   html,
   body {
@@ -192,6 +202,32 @@ html {
 }
 
 /* Custom animations */
+
+/* Hero name drawn with a pen (src/components/DrawnName.tsx). Paths use
+   pathLength=1, so a dash of 1 is exactly one full outline. */
+.drawn-name path {
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 9; /* font units; ~0.5px at the hero size */
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-opacity: 0;
+  animation-name: drawn-name;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+
+@keyframes drawn-name {
+  0% { stroke-dashoffset: 1; stroke-opacity: 1; fill-opacity: 0; }
+  75% { stroke-dashoffset: 0; stroke-opacity: 1; fill-opacity: 0; }
+  100% { stroke-dashoffset: 0; stroke-opacity: 0; fill-opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drawn-name path {
+    animation: none;
+  }
+}
 @keyframes float {
   0%,
   100% {

@@ -99,6 +99,41 @@ export const projects: Project[] = [
     imageUrl: "./projects/mapcode.jpg",
   },
   {
+    title: "Neural Networks from Scratch",
+    description:
+      "MLPs implemented from scratch in NumPy, with backpropagation, gradient checking, multiple activations and optimisers. Used for single- and multi-label classification, regression and autoencoding, and tuned with W&B sweeps.",
+    technologies: ["Python", "NumPy", "Backpropagation", "W&B"],
+    githubUrl:
+      "https://github.com/ameykaran/smai-assignments/tree/main/models/neural_networks",
+    imageUrl: "./projects/smai-mlp.jpg",
+  },
+  {
+    title: "Spoken Digit Recognition using HMMs",
+    description:
+      "Trained one Gaussian HMM per digit on MFCC features and classified utterances by maximum likelihood, reaching 90% test accuracy on the Free Spoken Digit Dataset.",
+    technologies: ["Python", "hmmlearn", "librosa", "MFCC"],
+    githubUrl:
+      "https://github.com/ameykaran/smai-assignments/tree/main/assignments/5",
+    imageUrl: "./projects/smai-hmm.jpg",
+  },
+  {
+    title: "CNNs & Autoencoders",
+    description:
+      "Configurable CNNs for digit counting (100% test accuracy) and multi-label digit recognition on Multi-MNIST. Compared CNN, MLP and PCA autoencoders on Fashion-MNIST by running KNN on their latent spaces.",
+    technologies: ["PyTorch", "CNN", "Autoencoders", "PCA", "W&B"],
+    githubUrl:
+      "https://github.com/ameykaran/smai-assignments/tree/main/assignments/4",
+    imageUrl: "./projects/smai-autoencoder.jpg",
+  },
+  {
+    title: "Classical ML Algorithms from Scratch",
+    description:
+      "KNN (vectorised from 30+ minutes to 48 s), regularised polynomial regression, K-means, GMM, PCA, hierarchical clustering and KDE implemented from scratch, applied to Spotify genre data and 512-d word embeddings.",
+    technologies: ["Python", "NumPy", "Clustering", "PCA", "KNN"],
+    githubUrl: "https://github.com/ameykaran/smai-assignments/tree/main/models",
+    imageUrl: "./projects/smai-clustering.jpg",
+  },
+  {
     title: "Tiny Tots - Baby Growth Tracker",
     description:
       "Baby growth tracking solution built from user research insights, with Figma wireframes and ViteJS prototype.",
@@ -129,7 +164,7 @@ export const projects: Project[] = [
       "Simple shell built from scratch in C with IO redirection, piping, background processes, signal handling, and fork-exec model.",
     technologies: ["C", "System Calls", "MakeFile", "Linux IO redirection"],
     githubUrl: "https://github.com/ameykaran/akonsole",
-    imageUrl: "./akonsole.png",
+    imageUrl: "./projects/akonsole.jpg",
   },
   {
     title: "Optimising Matrix Multiplication",
@@ -168,6 +203,6 @@ export const projects: Project[] = [
       "Wordle-like game for Indian audience where players guess city names based on hints. Published on Google Play Store.",
     technologies: ["Android Studio", "Java"],
     demoUrl: "https://apkgk.com/com.ameykaran.indcity",
-    imageUrl: "./projects/indcity.webp",
+    imageUrl: "./projects/indcity.jpg",
   },
 ];

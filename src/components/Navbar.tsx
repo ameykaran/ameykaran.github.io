@@ -25,7 +25,7 @@ const Navbar = () => {
         <button
           type="button"
           onClick={() => scrollToSection(null)}
-          className="font-display font-bold text-white text-lg tracking-tight hover:text-blue transition-colors"
+          className="font-name font-normal text-white text-2xl hover:text-blue transition-colors"
         >
           Amey<span className="text-blue">.</span>
         </button>

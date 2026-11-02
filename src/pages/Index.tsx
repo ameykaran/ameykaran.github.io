@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ProjectCard from "@/components/ProjectCard";
+import DrawnName from "@/components/DrawnName";
 import SkillBadge from "@/components/SkillBadge";
 import ExperienceCard from "@/components/ExperienceCard";
 import AchievementCard from "@/components/AchievementCard";
@@ -62,9 +63,10 @@ const Index = () => {
             <span className="section-eyebrow">
               <Sparkles className="w-3.5 h-3.5" /> Hey, I'm
             </span>
-            <h1 className="font-display text-4xl sm:text-5xl font-extrabold text-white mb-3 tracking-tight">
-              {aboutData.name}
-            </h1>
+            <DrawnName
+              text={aboutData.name}
+              className="text-5xl sm:text-6xl text-white"
+            />
             <p className="text-lg text-blue font-medium mb-4">
               {aboutData.tagline}
             </p>

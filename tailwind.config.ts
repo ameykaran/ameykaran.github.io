@@ -69,9 +69,10 @@ export default {
         violet: "hsl(var(--accent-violet))",
       },
       fontFamily: {
+        name: ["Bucklane", "Outfit", "cursive"],
         display: ["Outfit", "system-ui", "sans-serif"],
         sans: ["Inter", "system-ui", "sans-serif"],
-        mono: ["\"JetBrains Mono\"", "monospace"],
+        mono: ['"JetBrains Mono"', "monospace"],
       },
       borderRadius: {
         lg: "var(--radius)",
